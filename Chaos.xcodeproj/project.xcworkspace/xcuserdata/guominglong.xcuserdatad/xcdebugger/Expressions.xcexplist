@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.mainScreen().scale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainLogo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E86032D1D000E440032ABAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86032C1D000E440032ABAD /* AppDelegate.swift */; };
+		4E86032F1D000E440032ABAD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4E86032E1D000E440032ABAD /* GameScene.sks */; };
+		4E8603311D000E440032ABAD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603301D000E440032ABAD /* GameScene.swift */; };
+		4E8603331D000E440032ABAD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603321D000E440032ABAD /* GameViewController.swift */; };
+		4E8603361D000E440032ABAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8603341D000E440032ABAD /* Main.storyboard */; };
+		4E8603381D000E440032ABAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8603371D000E440032ABAD /* Assets.xcassets */; };
+		4E86033B1D000E440032ABAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8603391D000E440032ABAD /* LaunchScreen.storyboard */; };
+		4E86034A1D000EC70032ABAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603491D000EC70032ABAD /* AppDelegate.swift */; };
+		4E86034C1D000EC70032ABAD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86034B1D000EC70032ABAD /* GameScene.swift */; };
+		4E86034E1D000EC70032ABAD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4E86034D1D000EC70032ABAD /* GameScene.sks */; };
+		4E8603501D000EC70032ABAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86034F1D000EC70032ABAD /* Assets.xcassets */; };
+		4E8603531D000EC70032ABAD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8603511D000EC70032ABAD /* MainMenu.xib */; };
+		4E8603591D000F8E0032ABAD /* MyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603581D000F8E0032ABAD /* MyTest.swift */; };
+		4E86036E1D0013AF0032ABAD /* MyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603581D000F8E0032ABAD /* MyTest.swift */; };
+		4E8603701D00147D0032ABAD /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86036F1D00147D0032ABAD /* MyScene.swift */; };
+		4E8603711D00147D0032ABAD /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86036F1D00147D0032ABAD /* MyScene.swift */; };
+		4E8603771D0020A40032ABAD /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603761D0020A40032ABAD /* LogoScene.swift */; };
+		4E8603781D0020A40032ABAD /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603761D0020A40032ABAD /* LogoScene.swift */; };
+		4E86037A1D0020D70032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603791D0020D70032ABAD /* GuideScene.swift */; };
+		4E86037B1D0020D70032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603791D0020D70032ABAD /* GuideScene.swift */; };
+		4E86037E1D0024340032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86037D1D0024340032ABAD /* GMLScene.swift */; };
+		4E86037F1D0024340032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86037D1D0024340032ABAD /* GMLScene.swift */; };
+		4E8603991D0030550032ABAD /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8603981D0030550032ABAD /* SpriteKit.framework */; };
+		4E86039B1D0032960032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
+		4E86039C1D0032A80032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E8603291D000E440032ABAD /* ChaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E86032C1D000E440032ABAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E86032E1D000E440032ABAD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		4E8603301D000E440032ABAD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4E8603321D000E440032ABAD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4E8603351D000E440032ABAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E8603371D000E440032ABAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E86033A1D000E440032ABAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E86033C1D000E440032ABAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8603471D000EC70032ABAD /* ChaosMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8603491D000EC70032ABAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E86034B1D000EC70032ABAD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4E86034D1D000EC70032ABAD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		4E86034F1D000EC70032ABAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E8603521D000EC70032ABAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4E8603541D000EC70032ABAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8603581D000F8E0032ABAD /* MyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTest.swift; path = currentEngine/MyTest.swift; sourceTree = "<group>"; };
+		4E86036F1D00147D0032ABAD /* MyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScene.swift; path = currentEngine/MyScene.swift; sourceTree = "<group>"; };
+		4E8603761D0020A40032ABAD /* LogoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoScene.swift; path = currentEngine/scenes/LogoScene.swift; sourceTree = "<group>"; };
+		4E8603791D0020D70032ABAD /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuideScene.swift; path = currentEngine/scenes/GuideScene.swift; sourceTree = "<group>"; };
+		4E86037D1D0024340032ABAD /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMLScene.swift; path = currentEngine/engineCore/GMLScene.swift; sourceTree = "<group>"; };
+		4E8603981D0030550032ABAD /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
+		4E86039A1D0032960032ABAD /* MainAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainAssets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E8603261D000E440032ABAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8603441D000EC70032ABAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8603991D0030550032ABAD /* SpriteKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E8603201D000E440032ABAD = {
+			isa = PBXGroup;
+			children = (
+				4E86039A1D0032960032ABAD /* MainAssets */,
+				4E8603981D0030550032ABAD /* SpriteKit.framework */,
+				4E8603421D000E5A0032ABAD /* currentEngine */,
+				4E86032B1D000E440032ABAD /* ChaosIOS */,
+				4E8603481D000EC70032ABAD /* ChaosMac */,
+				4E86032A1D000E440032ABAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E86032A1D000E440032ABAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E8603291D000E440032ABAD /* ChaosIOS.app */,
+				4E8603471D000EC70032ABAD /* ChaosMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E86032B1D000E440032ABAD /* ChaosIOS */ = {
+			isa = PBXGroup;
+			children = (
+				4E86032C1D000E440032ABAD /* AppDelegate.swift */,
+				4E86032E1D000E440032ABAD /* GameScene.sks */,
+				4E8603301D000E440032ABAD /* GameScene.swift */,
+				4E8603321D000E440032ABAD /* GameViewController.swift */,
+				4E8603341D000E440032ABAD /* Main.storyboard */,
+				4E8603371D000E440032ABAD /* Assets.xcassets */,
+				4E8603391D000E440032ABAD /* LaunchScreen.storyboard */,
+				4E86033C1D000E440032ABAD /* Info.plist */,
+			);
+			name = ChaosIOS;
+			path = Chaos;
+			sourceTree = "<group>";
+		};
+		4E8603421D000E5A0032ABAD /* currentEngine */ = {
+			isa = PBXGroup;
+			children = (
+				4E86037C1D0023DF0032ABAD /* core */,
+				4E8603721D001F710032ABAD /* scenes */,
+				4E8603581D000F8E0032ABAD /* MyTest.swift */,
+				4E86036F1D00147D0032ABAD /* MyScene.swift */,
+			);
+			name = currentEngine;
+			sourceTree = "<group>";
+		};
+		4E8603481D000EC70032ABAD /* ChaosMac */ = {
+			isa = PBXGroup;
+			children = (
+				4E8603491D000EC70032ABAD /* AppDelegate.swift */,
+				4E86034B1D000EC70032ABAD /* GameScene.swift */,
+				4E86034D1D000EC70032ABAD /* GameScene.sks */,
+				4E86034F1D000EC70032ABAD /* Assets.xcassets */,
+				4E8603511D000EC70032ABAD /* MainMenu.xib */,
+				4E8603541D000EC70032ABAD /* Info.plist */,
+			);
+			path = ChaosMac;
+			sourceTree = "<group>";
+		};
+		4E8603721D001F710032ABAD /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4E8603761D0020A40032ABAD /* LogoScene.swift */,
+				4E8603791D0020D70032ABAD /* GuideScene.swift */,
+			);
+			name = scenes;
+			sourceTree = "<group>";
+		};
+		4E86037C1D0023DF0032ABAD /* core */ = {
+			isa = PBXGroup;
+			children = (
+				4E86037D1D0024340032ABAD /* GMLScene.swift */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E8603281D000E440032ABAD /* ChaosIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E86033F1D000E440032ABAD /* Build configuration list for PBXNativeTarget "ChaosIOS" */;
+			buildPhases = (
+				4E8603251D000E440032ABAD /* Sources */,
+				4E8603261D000E440032ABAD /* Frameworks */,
+				4E8603271D000E440032ABAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChaosIOS;
+			productName = Chaos;
+			productReference = 4E8603291D000E440032ABAD /* ChaosIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E8603461D000EC70032ABAD /* ChaosMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E8603551D000EC70032ABAD /* Build configuration list for PBXNativeTarget "ChaosMac" */;
+			buildPhases = (
+				4E8603431D000EC70032ABAD /* Sources */,
+				4E8603441D000EC70032ABAD /* Frameworks */,
+				4E8603451D000EC70032ABAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChaosMac;
+			productName = ChaosMac;
+			productReference = 4E8603471D000EC70032ABAD /* ChaosMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E8603211D000E440032ABAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = guominglong;
+				TargetAttributes = {
+					4E8603281D000E440032ABAD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					4E8603461D000EC70032ABAD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 4E8603241D000E440032ABAD /* Build configuration list for PBXProject "Chaos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E8603201D000E440032ABAD;
+			productRefGroup = 4E86032A1D000E440032ABAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E8603281D000E440032ABAD /* ChaosIOS */,
+				4E8603461D000EC70032ABAD /* ChaosMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E8603271D000E440032ABAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E86039C1D0032A80032ABAD /* MainAssets in Resources */,
+				4E86032F1D000E440032ABAD /* GameScene.sks in Resources */,
+				4E86033B1D000E440032ABAD /* LaunchScreen.storyboard in Resources */,
+				4E8603381D000E440032ABAD /* Assets.xcassets in Resources */,
+				4E8603361D000E440032ABAD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8603451D000EC70032ABAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E86039B1D0032960032ABAD /* MainAssets in Resources */,
+				4E8603501D000EC70032ABAD /* Assets.xcassets in Resources */,
+				4E86034E1D000EC70032ABAD /* GameScene.sks in Resources */,
+				4E8603531D000EC70032ABAD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E8603251D000E440032ABAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8603771D0020A40032ABAD /* LogoScene.swift in Sources */,
+				4E86037A1D0020D70032ABAD /* GuideScene.swift in Sources */,
+				4E8603311D000E440032ABAD /* GameScene.swift in Sources */,
+				4E8603591D000F8E0032ABAD /* MyTest.swift in Sources */,
+				4E8603701D00147D0032ABAD /* MyScene.swift in Sources */,
+				4E8603331D000E440032ABAD /* GameViewController.swift in Sources */,
+				4E86032D1D000E440032ABAD /* AppDelegate.swift in Sources */,
+				4E86037E1D0024340032ABAD /* GMLScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E8603431D000EC70032ABAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8603711D00147D0032ABAD /* MyScene.swift in Sources */,
+				4E86037B1D0020D70032ABAD /* GuideScene.swift in Sources */,
+				4E86036E1D0013AF0032ABAD /* MyTest.swift in Sources */,
+				4E8603781D0020A40032ABAD /* LogoScene.swift in Sources */,
+				4E86034C1D000EC70032ABAD /* GameScene.swift in Sources */,
+				4E86034A1D000EC70032ABAD /* AppDelegate.swift in Sources */,
+				4E86037F1D0024340032ABAD /* GMLScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4E8603341D000E440032ABAD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E8603351D000E440032ABAD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E8603391D000E440032ABAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E86033A1D000E440032ABAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4E8603511D000EC70032ABAD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E8603521D000EC70032ABAD /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E86033D1D000E440032ABAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E86033E1D000E440032ABAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E8603401D000E440032ABAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chaos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.Chaos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Debug;
+		};
+		4E8603411D000E440032ABAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chaos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.Chaos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		4E8603561D000EC70032ABAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ChaosMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.ChaosMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Debug;
+		};
+		4E8603571D000EC70032ABAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ChaosMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.ChaosMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E8603241D000E440032ABAD /* Build configuration list for PBXProject "Chaos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E86033D1D000E440032ABAD /* Debug */,
+				4E86033E1D000E440032ABAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E86033F1D000E440032ABAD /* Build configuration list for PBXNativeTarget "ChaosIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E8603401D000E440032ABAD /* Debug */,
+				4E8603411D000E440032ABAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4E8603551D000EC70032ABAD /* Build configuration list for PBXNativeTarget "ChaosMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E8603561D000EC70032ABAD /* Debug */,
+				4E8603571D000EC70032ABAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E8603211D000E440032ABAD /* Project object */;
+}
