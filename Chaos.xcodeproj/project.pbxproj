@@ -29,7 +29,6 @@
 		4E86037B1D0020D70032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603791D0020D70032ABAD /* GuideScene.swift */; };
 		4E86037E1D0024340032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86037D1D0024340032ABAD /* GMLScene.swift */; };
 		4E86037F1D0024340032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86037D1D0024340032ABAD /* GMLScene.swift */; };
-		4E8603991D0030550032ABAD /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8603981D0030550032ABAD /* SpriteKit.framework */; };
 		4E86039B1D0032960032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
 		4E86039C1D0032A80032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		4E8603761D0020A40032ABAD /* LogoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoScene.swift; path = currentEngine/scenes/LogoScene.swift; sourceTree = "<group>"; };
 		4E8603791D0020D70032ABAD /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuideScene.swift; path = currentEngine/scenes/GuideScene.swift; sourceTree = "<group>"; };
 		4E86037D1D0024340032ABAD /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMLScene.swift; path = currentEngine/engineCore/GMLScene.swift; sourceTree = "<group>"; };
-		4E8603981D0030550032ABAD /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 		4E86039A1D0032960032ABAD /* MainAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainAssets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E8603991D0030550032ABAD /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				4E86039A1D0032960032ABAD /* MainAssets */,
-				4E8603981D0030550032ABAD /* SpriteKit.framework */,
 				4E8603421D000E5A0032ABAD /* currentEngine */,
 				4E86032B1D000E440032ABAD /* ChaosIOS */,
 				4E8603481D000EC70032ABAD /* ChaosMac */,
@@ -475,6 +471,7 @@
 				4E8603411D000E440032ABAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E8603551D000EC70032ABAD /* Build configuration list for PBXNativeTarget "ChaosMac" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +480,7 @@
 				4E8603571D000EC70032ABAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
