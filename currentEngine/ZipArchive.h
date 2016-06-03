@@ -21,7 +21,8 @@
 @optional
 -(void) ErrorMessage:(NSString*) msg;
 -(BOOL) OverWriteOperation:(NSString*) file;
-
+@optional
+-(void) UnzipFileAsyncComplete:(NSMutableDictionary<NSString*,NSData*> *)reusltDic;
 @end
 
 
@@ -44,5 +45,10 @@
 -(BOOL) UnzipOpenFile:(NSString*) zipFile;
 -(BOOL) UnzipOpenFile:(NSString*) zipFile Password:(NSString*) password;
 -(BOOL) UnzipFileTo:(NSString*) path overWrite:(BOOL) overwrite;
+
+/**
+ 异步解压ZIP文件
+ */
+-(void) UnzipFileToDictionary_Async;
 -(BOOL) UnzipCloseFile;
 @end

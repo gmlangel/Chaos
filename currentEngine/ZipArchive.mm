@@ -11,10 +11,11 @@
 #import "zlib.h"
 #import "zconf.h"
 
-
+#define sleepThreadTime (1<<20)
 
 @interface ZipArchive (Private)
 
+-(void) unzipFile_AsyncComplete:(NSMutableDictionary<NSString *,NSData *> *) resultDic;
 -(void) OutputErrorMessage:(NSString*) msg;
 -(BOOL) OverWrite:(NSString*) file;
 -(NSDate*) Date1980;
@@ -156,7 +157,7 @@
 		unz_global_info  globalInfo = {0};
 		if( unzGetGlobalInfo(_unzFile, &globalInfo )==UNZ_OK )
 		{
-			NSLog([NSString stringWithFormat:@"%d entries in the zip file",globalInfo.number_entry] );
+			NSLog(@"%lu entries in the zip file",globalInfo.number_entry);
 		}
 	}
 	return _unzFile!=NULL;
@@ -166,6 +167,83 @@
 {
 	_password = password;
 	return [self UnzipOpenFile:zipFile];
+}
+
+
+-(void) UnzipFileToDictionary_Async
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableDictionary<NSString *,NSData *> * resultDic = [[NSMutableDictionary alloc] init];
+        NSInteger bytesCount = 0;
+        int ret = unzGoToFirstFile( _unzFile );
+        unsigned char		buffer[4096] = {0};
+        if( ret!=UNZ_OK )
+        {
+            [self OutputErrorMessage:@"Failed"];
+        }
+        
+        do{
+            if( [_password length]==0 )
+                ret = unzOpenCurrentFile( _unzFile );
+            else
+                ret = unzOpenCurrentFilePassword( _unzFile, [_password cStringUsingEncoding:NSASCIIStringEncoding] );
+            if( ret!=UNZ_OK )
+            {
+                [self OutputErrorMessage:@"Error occurs"];
+                break;
+            }
+            // reading data and write to file
+            int read ;
+            unz_file_info	fileInfo ={0};
+            ret = unzGetCurrentFileInfo(_unzFile, &fileInfo, NULL, 0, NULL, 0, NULL, 0);
+            if( ret!=UNZ_OK )
+            {
+                [self OutputErrorMessage:@"Error occurs while getting file info"];
+                unzCloseCurrentFile( _unzFile );
+                break;
+            }
+            char* filename = (char*) malloc( fileInfo.size_filename +1 );
+            unzGetCurrentFileInfo(_unzFile, &fileInfo, filename, fileInfo.size_filename + 1, NULL, 0, NULL, 0);
+            filename[fileInfo.size_filename] = '\0';
+            NSString * strPath = [NSString stringWithUTF8String:filename];
+            free(filename);
+            
+            //创建一个NSData准备存储该文件的数据
+            NSMutableData * fileNd = [[NSMutableData alloc] init];
+            while(true)
+            {
+                read=unzReadCurrentFile(_unzFile, buffer, 4096);
+                if( read > 0 )
+                {
+                    [fileNd appendBytes:buffer length:read];
+                }
+                else if( read<0 )
+                {
+                    [self OutputErrorMessage:[NSString stringWithFormat:@"[UnzipFileToDictionary_Async]解压文件失败:%@",strPath]];
+                    break;
+                }
+                else
+                    break;
+            }
+            bytesCount = bytesCount + fileNd.length;
+            [resultDic setValue:fileNd forKey:strPath];//填充结果集合
+            if(bytesCount > sleepThreadTime)
+            {
+                //每加载1mb数据，挂起线程0.5秒,防止CPU使用量瞬间过大，主线程卡死
+                [NSThread sleepForTimeInterval:0.5];
+                bytesCount = 0;
+            }
+            unzCloseCurrentFile( _unzFile );
+            ret = unzGoToNextFile( _unzFile );
+        }while( ret==UNZ_OK && UNZ_OK!=UNZ_END_OF_LIST_OF_FILE );
+        
+        //执行完毕后跳回主线程,通知宿主程序 资源解压完毕
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self unzipFile_AsyncComplete:resultDic];
+        });
+    });
+    
+    
 }
 
 -(BOOL) UnzipFileTo:(NSString*) path overWrite:(BOOL) overwrite
@@ -247,13 +325,13 @@
 			else 
 				break;				
 		}
+    
 		if( fp )
 		{
 			fclose( fp );
 			// set the orignal datetime property
 			NSDate* orgDate = nil;
 			
-			//{{ thanks to brad.eaton for the solution
 			NSDateComponents *dc = [[NSDateComponents alloc] init];
 			
 			dc.second = fileInfo.tmu_date.tm_sec;
@@ -264,17 +342,13 @@
 			dc.year = fileInfo.tmu_date.tm_year;
 			
 			NSCalendar *gregorian = [[NSCalendar alloc] 
-									 initWithCalendarIdentifier:NSGregorianCalendar];
+									 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 			
 			orgDate = [gregorian dateFromComponents:dc] ;
 			
-			//}}
-			
-			
-			NSDictionary* attr = [NSDictionary dictionaryWithObject:orgDate forKey:NSFileModificationDate]; //[[NSFileManager defaultManager] fileAttributesAtPath:fullPath traverseLink:YES];
+			NSDictionary* attr = [NSDictionary dictionaryWithObject:orgDate forKey:NSFileModificationDate];
 			if( attr )
 			{
-				//		[attr  setValue:orgDate forKey:NSFileCreationDate];
 				if( ![[NSFileManager defaultManager] setAttributes:attr ofItemAtPath:fullPath error:nil] )
 				{
 					// cann't set attributes 
@@ -303,15 +377,21 @@
 #pragma mark wrapper for delegate
 -(void) OutputErrorMessage:(NSString*) msg
 {
-	if( _delegate && [_delegate respondsToSelector:@selector(ErrorMessage)] )
+    
+    if( _delegate && [_delegate respondsToSelector:@selector(ErrorMessage:)] )
 		[_delegate ErrorMessage:msg];
 }
 
 -(BOOL) OverWrite:(NSString*) file
 {
-	if( _delegate && [_delegate respondsToSelector:@selector(OverWriteOperation)] )
+    if( _delegate && [_delegate respondsToSelector:@selector(OverWriteOperation:)] )
 		return [_delegate OverWriteOperation:file];
 	return YES;
+}
+
+-(void) unzipFile_AsyncComplete:(NSMutableDictionary<NSString *,NSData *> *)resultDic{
+    if( _delegate && [_delegate respondsToSelector:@selector(UnzipFileAsyncComplete:)] )
+        [_delegate UnzipFileAsyncComplete:resultDic];
 }
 
 #pragma mark get NSDate object for 1980-01-01
@@ -322,7 +402,7 @@
 	[comps setMonth:1];
 	[comps setYear:1980];
 	NSCalendar *gregorian = [[NSCalendar alloc]
-							 initWithCalendarIdentifier:NSGregorianCalendar];
+							 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDate *date = [gregorian dateFromComponents:comps];
 	return date;
 }
