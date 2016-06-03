@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "-[SKSpriteNode(GMLEngineCore) autoScreen]:GMLExtensions.m">
          <PersistentStrings>
             <PersistentString
-               value = "UIScreen.mainScreen().scale">
+               value = "self.xScale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,7 +25,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
+         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.mainScreen().scale">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -13,24 +13,13 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = LogoScene(fileNamed:"GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            
-            skView.presentScene(scene)
-
-        }
         
-       UIScreen.mainScreen().scale
         
-        //NSLog("\(UIScreen.mainScreen().backingScaleFactor)");
+        //启动游戏
+        let arr = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true);
+        GMLGameConfig.setLogPaths([arr[0]]);
+        GMLGameConfig.setSourceScale(0.5);
+        GMLMain.instance.start(self.view as! SKView);
     }
 
     override func shouldAutorotate() -> Bool {

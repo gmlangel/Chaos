@@ -25,14 +25,14 @@ class LogoScene: GMLScene {
     override func ginit() {
         super.ginit();
         self.backgroundColor = SKColor.whiteColor();
-        mainLogo = SKSpriteNode(imageNamed: "MainAssets/logo/mainLog");
+        mainLogo = SKSpriteNode(imageNamed: "MainAssets/logo/mainLog").autoScreen();
         mainLogo.alpha = 0;
         mainLogo.normalTexture = mainLogo.texture?.textureByGeneratingNormalMap();
         mainLogo.position = CGPoint(x:CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame));
         self.addChild(mainLogo);
         
         
-        logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(1, duration: 0.5)])]);
+        logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(autoScreen(1), duration: 0.5)])]);
         
         
     }
@@ -40,8 +40,8 @@ class LogoScene: GMLScene {
     func logoReset()
     {
         mainLogo.alpha = 0;
-        mainLogo.xScale = 0.3;
-        mainLogo.yScale = 0.3;
+        mainLogo.xScale = autoScreen(0.3);
+        mainLogo.yScale = autoScreen(0.3);
     }
     
     override func didChangeSize(oldSize: CGSize) {

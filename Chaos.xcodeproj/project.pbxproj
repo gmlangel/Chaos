@@ -19,18 +19,34 @@
 		4E86034E1D000EC70032ABAD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4E86034D1D000EC70032ABAD /* GameScene.sks */; };
 		4E8603501D000EC70032ABAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86034F1D000EC70032ABAD /* Assets.xcassets */; };
 		4E8603531D000EC70032ABAD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8603511D000EC70032ABAD /* MainMenu.xib */; };
-		4E8603591D000F8E0032ABAD /* MyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603581D000F8E0032ABAD /* MyTest.swift */; };
-		4E86036E1D0013AF0032ABAD /* MyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603581D000F8E0032ABAD /* MyTest.swift */; };
-		4E8603701D00147D0032ABAD /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86036F1D00147D0032ABAD /* MyScene.swift */; };
-		4E8603711D00147D0032ABAD /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86036F1D00147D0032ABAD /* MyScene.swift */; };
-		4E8603771D0020A40032ABAD /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603761D0020A40032ABAD /* LogoScene.swift */; };
-		4E8603781D0020A40032ABAD /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603761D0020A40032ABAD /* LogoScene.swift */; };
-		4E86037A1D0020D70032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603791D0020D70032ABAD /* GuideScene.swift */; };
-		4E86037B1D0020D70032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603791D0020D70032ABAD /* GuideScene.swift */; };
-		4E86037E1D0024340032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86037D1D0024340032ABAD /* GMLScene.swift */; };
-		4E86037F1D0024340032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86037D1D0024340032ABAD /* GMLScene.swift */; };
 		4E86039B1D0032960032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
 		4E86039C1D0032A80032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
+		4E8603CC1D01357E0032ABAD /* GMLResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */; };
+		4E8603CD1D01357E0032ABAD /* GMLResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */; };
+		4E8603CE1D01357E0032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B31D01357E0032ABAD /* GMLScene.swift */; };
+		4E8603CF1D01357E0032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B31D01357E0032ABAD /* GMLScene.swift */; };
+		4E8603E01D01357E0032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603C61D01357E0032ABAD /* GuideScene.swift */; };
+		4E8603E11D01357E0032ABAD /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603C61D01357E0032ABAD /* GuideScene.swift */; };
+		4E8603E21D01357E0032ABAD /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603C71D01357E0032ABAD /* LogoScene.swift */; };
+		4E8603E31D01357E0032ABAD /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603C71D01357E0032ABAD /* LogoScene.swift */; };
+		4E8603E51D0135B70032ABAD /* GMLLogCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603E41D0135B70032ABAD /* GMLLogCenter.swift */; };
+		4E8603E61D0135B70032ABAD /* GMLLogCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603E41D0135B70032ABAD /* GMLLogCenter.swift */; };
+		4E8603F01D01594A0032ABAD /* GMLGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603EF1D01594A0032ABAD /* GMLGameConfig.m */; };
+		4E8603F11D01594A0032ABAD /* GMLGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603EF1D01594A0032ABAD /* GMLGameConfig.m */; };
+		4E8603F31D015C950032ABAD /* GMLMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603F21D015C950032ABAD /* GMLMain.swift */; };
+		4E8603F41D015C950032ABAD /* GMLMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603F21D015C950032ABAD /* GMLMain.swift */; };
+		4E8603F61D01600F0032ABAD /* GMLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603F51D01600F0032ABAD /* GMLExtensions.m */; };
+		4E8603F71D01600F0032ABAD /* GMLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603F51D01600F0032ABAD /* GMLExtensions.m */; };
+		4E8604021D0179FB0032ABAD /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603FA1D0179FB0032ABAD /* ioapi.c */; };
+		4E8604031D0179FB0032ABAD /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603FA1D0179FB0032ABAD /* ioapi.c */; };
+		4E8604041D0179FB0032ABAD /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603FC1D0179FB0032ABAD /* mztools.c */; };
+		4E8604051D0179FB0032ABAD /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603FC1D0179FB0032ABAD /* mztools.c */; };
+		4E8604061D0179FB0032ABAD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603FE1D0179FB0032ABAD /* unzip.c */; };
+		4E8604071D0179FB0032ABAD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603FE1D0179FB0032ABAD /* unzip.c */; };
+		4E8604081D0179FB0032ABAD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8604001D0179FB0032ABAD /* zip.c */; };
+		4E8604091D0179FB0032ABAD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8604001D0179FB0032ABAD /* zip.c */; };
+		4E86040C1D017A050032ABAD /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E86040B1D017A050032ABAD /* ZipArchive.mm */; };
+		4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E86040B1D017A050032ABAD /* ZipArchive.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,12 +66,29 @@
 		4E86034F1D000EC70032ABAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E8603521D000EC70032ABAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4E8603541D000EC70032ABAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E8603581D000F8E0032ABAD /* MyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTest.swift; path = currentEngine/MyTest.swift; sourceTree = "<group>"; };
-		4E86036F1D00147D0032ABAD /* MyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScene.swift; path = currentEngine/MyScene.swift; sourceTree = "<group>"; };
-		4E8603761D0020A40032ABAD /* LogoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoScene.swift; path = currentEngine/scenes/LogoScene.swift; sourceTree = "<group>"; };
-		4E8603791D0020D70032ABAD /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuideScene.swift; path = currentEngine/scenes/GuideScene.swift; sourceTree = "<group>"; };
-		4E86037D1D0024340032ABAD /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMLScene.swift; path = currentEngine/engineCore/GMLScene.swift; sourceTree = "<group>"; };
 		4E86039A1D0032960032ABAD /* MainAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainAssets; sourceTree = "<group>"; };
+		4E8603AE1D01357E0032ABAD /* currentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currentHeader.h; sourceTree = "<group>"; };
+		4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLResourceManager.swift; sourceTree = "<group>"; };
+		4E8603B31D01357E0032ABAD /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLScene.swift; sourceTree = "<group>"; };
+		4E8603C61D01357E0032ABAD /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideScene.swift; sourceTree = "<group>"; };
+		4E8603C71D01357E0032ABAD /* LogoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoScene.swift; sourceTree = "<group>"; };
+		4E8603E41D0135B70032ABAD /* GMLLogCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLLogCenter.swift; sourceTree = "<group>"; };
+		4E8603ED1D01584B0032ABAD /* GMLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLExtensions.h; sourceTree = "<group>"; };
+		4E8603EE1D01594A0032ABAD /* GMLGameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLGameConfig.h; sourceTree = "<group>"; };
+		4E8603EF1D01594A0032ABAD /* GMLGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLGameConfig.m; sourceTree = "<group>"; };
+		4E8603F21D015C950032ABAD /* GMLMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLMain.swift; sourceTree = "<group>"; };
+		4E8603F51D01600F0032ABAD /* GMLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLExtensions.m; sourceTree = "<group>"; };
+		4E8603F91D0179FB0032ABAD /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		4E8603FA1D0179FB0032ABAD /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		4E8603FB1D0179FB0032ABAD /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		4E8603FC1D0179FB0032ABAD /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		4E8603FD1D0179FB0032ABAD /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		4E8603FE1D0179FB0032ABAD /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		4E8603FF1D0179FB0032ABAD /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		4E8604001D0179FB0032ABAD /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		4E8604011D0179FB0032ABAD /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		4E86040A1D017A050032ABAD /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		4E86040B1D017A050032ABAD /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +112,8 @@
 		4E8603201D000E440032ABAD = {
 			isa = PBXGroup;
 			children = (
+				4E8603AD1D01357E0032ABAD /* currentEngine */,
 				4E86039A1D0032960032ABAD /* MainAssets */,
-				4E8603421D000E5A0032ABAD /* currentEngine */,
 				4E86032B1D000E440032ABAD /* ChaosIOS */,
 				4E8603481D000EC70032ABAD /* ChaosMac */,
 				4E86032A1D000E440032ABAD /* Products */,
@@ -112,17 +145,6 @@
 			path = Chaos;
 			sourceTree = "<group>";
 		};
-		4E8603421D000E5A0032ABAD /* currentEngine */ = {
-			isa = PBXGroup;
-			children = (
-				4E86037C1D0023DF0032ABAD /* core */,
-				4E8603721D001F710032ABAD /* scenes */,
-				4E8603581D000F8E0032ABAD /* MyTest.swift */,
-				4E86036F1D00147D0032ABAD /* MyScene.swift */,
-			);
-			name = currentEngine;
-			sourceTree = "<group>";
-		};
 		4E8603481D000EC70032ABAD /* ChaosMac */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,21 +158,57 @@
 			path = ChaosMac;
 			sourceTree = "<group>";
 		};
-		4E8603721D001F710032ABAD /* scenes */ = {
+		4E8603AD1D01357E0032ABAD /* currentEngine */ = {
 			isa = PBXGroup;
 			children = (
-				4E8603761D0020A40032ABAD /* LogoScene.swift */,
-				4E8603791D0020D70032ABAD /* GuideScene.swift */,
+				4E86040A1D017A050032ABAD /* ZipArchive.h */,
+				4E86040B1D017A050032ABAD /* ZipArchive.mm */,
+				4E8603F81D0179FB0032ABAD /* minizip */,
+				4E8603F21D015C950032ABAD /* GMLMain.swift */,
+				4E8603AE1D01357E0032ABAD /* currentHeader.h */,
+				4E8603AF1D01357E0032ABAD /* engineCore */,
+				4E8603C51D01357E0032ABAD /* scenes */,
 			);
-			name = scenes;
+			path = currentEngine;
 			sourceTree = "<group>";
 		};
-		4E86037C1D0023DF0032ABAD /* core */ = {
+		4E8603AF1D01357E0032ABAD /* engineCore */ = {
 			isa = PBXGroup;
 			children = (
-				4E86037D1D0024340032ABAD /* GMLScene.swift */,
+				4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */,
+				4E8603B31D01357E0032ABAD /* GMLScene.swift */,
+				4E8603E41D0135B70032ABAD /* GMLLogCenter.swift */,
+				4E8603ED1D01584B0032ABAD /* GMLExtensions.h */,
+				4E8603F51D01600F0032ABAD /* GMLExtensions.m */,
+				4E8603EE1D01594A0032ABAD /* GMLGameConfig.h */,
+				4E8603EF1D01594A0032ABAD /* GMLGameConfig.m */,
 			);
-			name = core;
+			path = engineCore;
+			sourceTree = "<group>";
+		};
+		4E8603C51D01357E0032ABAD /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4E8603C61D01357E0032ABAD /* GuideScene.swift */,
+				4E8603C71D01357E0032ABAD /* LogoScene.swift */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
+		4E8603F81D0179FB0032ABAD /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				4E8603F91D0179FB0032ABAD /* crypt.h */,
+				4E8603FA1D0179FB0032ABAD /* ioapi.c */,
+				4E8603FB1D0179FB0032ABAD /* ioapi.h */,
+				4E8603FC1D0179FB0032ABAD /* mztools.c */,
+				4E8603FD1D0179FB0032ABAD /* mztools.h */,
+				4E8603FE1D0179FB0032ABAD /* unzip.c */,
+				4E8603FF1D0179FB0032ABAD /* unzip.h */,
+				4E8604001D0179FB0032ABAD /* zip.c */,
+				4E8604011D0179FB0032ABAD /* zip.h */,
+			);
+			path = minizip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,14 +316,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E8603771D0020A40032ABAD /* LogoScene.swift in Sources */,
-				4E86037A1D0020D70032ABAD /* GuideScene.swift in Sources */,
 				4E8603311D000E440032ABAD /* GameScene.swift in Sources */,
-				4E8603591D000F8E0032ABAD /* MyTest.swift in Sources */,
-				4E8603701D00147D0032ABAD /* MyScene.swift in Sources */,
+				4E8603E01D01357E0032ABAD /* GuideScene.swift in Sources */,
+				4E8603E51D0135B70032ABAD /* GMLLogCenter.swift in Sources */,
+				4E8604081D0179FB0032ABAD /* zip.c in Sources */,
+				4E8603F61D01600F0032ABAD /* GMLExtensions.m in Sources */,
 				4E8603331D000E440032ABAD /* GameViewController.swift in Sources */,
+				4E8603CC1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
+				4E8604021D0179FB0032ABAD /* ioapi.c in Sources */,
+				4E8603F01D01594A0032ABAD /* GMLGameConfig.m in Sources */,
+				4E8604061D0179FB0032ABAD /* unzip.c in Sources */,
+				4E86040C1D017A050032ABAD /* ZipArchive.mm in Sources */,
+				4E8603E21D01357E0032ABAD /* LogoScene.swift in Sources */,
 				4E86032D1D000E440032ABAD /* AppDelegate.swift in Sources */,
-				4E86037E1D0024340032ABAD /* GMLScene.swift in Sources */,
+				4E8603CE1D01357E0032ABAD /* GMLScene.swift in Sources */,
+				4E8603F31D015C950032ABAD /* GMLMain.swift in Sources */,
+				4E8604041D0179FB0032ABAD /* mztools.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,13 +339,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E8603711D00147D0032ABAD /* MyScene.swift in Sources */,
-				4E86037B1D0020D70032ABAD /* GuideScene.swift in Sources */,
-				4E86036E1D0013AF0032ABAD /* MyTest.swift in Sources */,
-				4E8603781D0020A40032ABAD /* LogoScene.swift in Sources */,
+				4E8603F71D01600F0032ABAD /* GMLExtensions.m in Sources */,
+				4E8603E31D01357E0032ABAD /* LogoScene.swift in Sources */,
+				4E8604051D0179FB0032ABAD /* mztools.c in Sources */,
+				4E8603E11D01357E0032ABAD /* GuideScene.swift in Sources */,
+				4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */,
+				4E8604071D0179FB0032ABAD /* unzip.c in Sources */,
+				4E8603CD1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
+				4E8603CF1D01357E0032ABAD /* GMLScene.swift in Sources */,
+				4E8603E61D0135B70032ABAD /* GMLLogCenter.swift in Sources */,
 				4E86034C1D000EC70032ABAD /* GameScene.swift in Sources */,
+				4E8603F41D015C950032ABAD /* GMLMain.swift in Sources */,
+				4E8604031D0179FB0032ABAD /* ioapi.c in Sources */,
+				4E8604091D0179FB0032ABAD /* zip.c in Sources */,
+				4E8603F11D01594A0032ABAD /* GMLGameConfig.m in Sources */,
 				4E86034A1D000EC70032ABAD /* AppDelegate.swift in Sources */,
-				4E86037F1D0024340032ABAD /* GMLScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.Chaos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
 			};
 			name = Debug;
 		};
@@ -416,7 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.Chaos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
 			};
 			name = Release;
 		};
@@ -432,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.ChaosMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
 			};
 			name = Debug;
 		};
@@ -448,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.ChaosMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
 			};
 			name = Release;
 		};
