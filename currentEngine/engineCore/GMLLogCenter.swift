@@ -56,7 +56,7 @@ class GMLLogCenter:NSObject {
     /**
      输出日志(Debug模式)
      */
-    public func trace(msg:String?,_needTrace:Bool = true,_needWriteToFile:Bool = true){
+    func trace(msg:String?,_needTrace:Bool = true,_needWriteToFile:Bool = true){
         if(msg == nil)
         {
             return ;

@@ -12,6 +12,7 @@
 
 #endif /* currentHeader_h */
 
+#import "ZipArchive.h"
 #import "GMLGameConfig.h"
 #import "GMLExtensions.h"
 #import <CoreGraphics/CoreGraphics.h>
