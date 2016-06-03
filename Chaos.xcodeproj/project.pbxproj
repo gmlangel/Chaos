@@ -47,6 +47,8 @@
 		4E8604091D0179FB0032ABAD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8604001D0179FB0032ABAD /* zip.c */; };
 		4E86040C1D017A050032ABAD /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E86040B1D017A050032ABAD /* ZipArchive.mm */; };
 		4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E86040B1D017A050032ABAD /* ZipArchive.mm */; };
+		4E86040F1D017F720032ABAD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E86040E1D017F720032ABAD /* libz.tbd */; };
+		4E8604111D017F7C0032ABAD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8604101D017F7C0032ABAD /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		4E8604011D0179FB0032ABAD /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		4E86040A1D017A050032ABAD /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		4E86040B1D017A050032ABAD /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		4E86040E1D017F720032ABAD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4E8604101D017F7C0032ABAD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E86040F1D017F720032ABAD /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8604111D017F7C0032ABAD /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,8 @@
 		4E8603201D000E440032ABAD = {
 			isa = PBXGroup;
 			children = (
+				4E8604101D017F7C0032ABAD /* libz.tbd */,
+				4E86040E1D017F720032ABAD /* libz.tbd */,
 				4E8603AD1D01357E0032ABAD /* currentEngine */,
 				4E86039A1D0032960032ABAD /* MainAssets */,
 				4E86032B1D000E440032ABAD /* ChaosIOS */,
@@ -474,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Chaos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.Chaos;
@@ -486,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Chaos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talkdeveloper.Chaos;
@@ -498,7 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ChaosMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -514,7 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ChaosMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
