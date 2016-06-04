@@ -1,2 +1,12 @@
 
 *.xcuserstate
+
+MainAssets/main.zip
+
+MainAssets/main/AllSceneConfig.plist
+
+MainAssets/main/LoginScene.plist
+
+MainAssets/main/MainScene.plist
+
+MainAssets/main/PreloadScene.plist

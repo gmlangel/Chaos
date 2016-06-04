@@ -45,7 +45,16 @@ class LogoScene: GMLScene {
         
         logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(autoScreen(1), duration: 0.5)])]);
         
+        
+       // NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(test), userInfo: nil, repeats: false);
     }
+    
+//    func test()
+//    {
+//        let sk = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("monst1_1")).autoScreen();
+//        addChild(sk);
+//    }
+    
     
     func logoReset()
     {

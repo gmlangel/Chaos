@@ -12,8 +12,10 @@
 #elif(TARGET_OS_IOS || (TARGET_OS_MAC && TARGET_OS_SIMULATOR))
 #import <UIKit/UIKit.h>
 #endif
-@implementation GMLTool
 
+
+@implementation GMLTool
+//NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSAllDomainsMask, true);
 +(SKTexture * __nullable)imageByData:(NSData * __nonnull)fileData{
 #if (TARGET_OS_MAC && !TARGET_OS_SIMULATOR)
     return [SKTexture textureWithImage:[[NSImage alloc] initWithData:fileData]];
@@ -22,5 +24,12 @@
 #else
     return nil;
 #endif
+}
+
+
+
++(NSString * __nonnull)documentPath{
+    NSArray * arr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSAllDomainsMask, true);
+    return [arr objectAtIndex:0];
 }
 @end

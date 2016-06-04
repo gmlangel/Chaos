@@ -11,17 +11,32 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
     /**
      文理集合
      */
-    private(set) var textureDic:[String:SKTexture]!;
+    private var textureDic:[String:SKTexture]!;
     
+    /**
+     存储资源名称对应texture和媒体资源的NSData
+     */
+    private var resourceDataDic:[String:NSData]!;
     
-    private var resourcePicDic:[String:NSDictionary]!;
+    /**
+     存储资源名称对照表
+     */
+    private var resourceTable:[String:[String]]!;
+    
+    /**
+     存储资源名称对应配置文件
+     */
+    private var resourceConfitDic:[String:NSDictionary]!;
     
     
     private var zipTool:ZipArchive!;
+    private var currentResourceKey:String!;//当前正在加载的资源包的KEY
+    private var resourceIsLoading:Bool! = false;//是否正在加载一个资源
+    
     /**
-     当前资源包的KEY
+     等待加载的资源包
      */
-    private var currentResourceKey:String!;
+    private var waitLoad:[String:String]!;
     
     static var instance:GMLResourceManager{
         get{
@@ -35,7 +50,10 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
     override init(){
         super.init();
         textureDic = [String:SKTexture]();
-        resourcePicDic = [String:NSDictionary]();
+        resourceDataDic = [String:NSData]();
+        resourceTable = [String:[String]]();
+        resourceConfitDic = [String:NSDictionary]();
+        waitLoad = [String:String]();
         zipTool = ZipArchive();
         zipTool.delegate = self;
     }
@@ -45,6 +63,8 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
      */
     func ErrorMessage(msg: String!) {
         GMLLogCenter.instance.trace(msg);
+        waitLoad.removeValueForKey(currentResourceKey);
+        loadResource();//判断是否还有 没被加载的资源包，并加载
     }
     
     /**
@@ -52,24 +72,98 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
      */
     func UnzipFileAsyncComplete(reusltDic: NSMutableDictionary!) {
         zipTool.CloseZipFile2();
-        resourcePicDic[currentResourceKey] = reusltDic;
-        GMLLogCenter.instance.trace("[UnzipFileAsyncComplete]资源解压完毕:" + currentResourceKey);
+        resourceTable[currentResourceKey] = [];
         
-        //填充texture集合
-        for key in reusltDic.allKeys
-        {
-            textureDic[key as! String] = GMLTool.imageByData(reusltDic.valueForKey(key as! String) as! NSData);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
+            //解析resourceDic
+            var keyStrNS:NSString;//key的NSString形式
+            var extenName:String;//扩展名
+            var keyStr:String;//key的String形式
+            for key in reusltDic.allKeys
+            {
+                keyStrNS = key as! NSString;
+                extenName = keyStrNS.pathExtension.lowercaseString;//获取扩展名
+                keyStrNS = keyStrNS.stringByDeletingPathExtension.stringByReplacingOccurrencesOfString("/", withString: "_");//删除扩展名,同时将路径/  转换为_,最终获取文件名
+                keyStr = keyStrNS as String;
+                
+                if(keyStr.containsString("__MACOSX") || extenName == "" || keyStr.containsString(".DS_Store"))
+                {
+                    //系统缓存文件或者没有扩展名的文件，不解析
+                    continue;
+                }else if(extenName == "plist")
+                {
+                    let filePath = GMLTool.documentPath() + "/\(key)";
+                    if((reusltDic.valueForKey(key as! String) as! NSData).writeToFile(filePath, atomically: true))
+                    {
+                        //创建本地的临时配置文件，以供加载
+                        self.resourceConfitDic[keyStr] = NSDictionary(contentsOfFile: filePath);
+                        //加载完毕后移除这个配置文件
+                        do{
+                            try NSFileManager.defaultManager().removeItemAtPath(filePath);
+                            //配置文件
+                            self.resourceTable[self.currentResourceKey]!.append(keyStr);
+                        }catch{
+                            GMLLogCenter.instance.trace("[UnzipFileAsyncComplete]配置文件转换失败:\(key)");
+                        }
+                        
+                    }
+                }else if(extenName == "png" || extenName == "jpg")
+                {
+                    //texture资源,存储到资源名称对照表和资源集合中
+                    self.resourceTable[self.currentResourceKey]!.append(keyStr);
+                    self.resourceDataDic[keyStr] = reusltDic.valueForKey(key as! String) as! NSData;
+                }else{
+                    //媒体资源,存储到资源名称对照表和资源集合中
+                    self.resourceTable[self.currentResourceKey]!.append(keyStr);
+                    self.resourceDataDic[keyStr] = reusltDic.valueForKey(key as! String) as! NSData;
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                GMLLogCenter.instance.trace("[UnzipFileAsyncComplete]资源解压完毕:" + self.currentResourceKey);
+                self.waitLoad.removeValueForKey(self.currentResourceKey);
+                self.loadResource();//判断是否还有 没被加载的资源包，并加载
+            })
         }
+        
+        
+        
     }
     
     /**
      加载资源包
      */
     func loadResourcePick(key:String,resourcePath:String)
-    {//"/MainAssets/logo/test"
-        currentResourceKey = key
-        if(zipTool.UnzipOpenFile(NSBundle.mainBundle().pathForResource(resourcePath, ofType: "zip"))){
+    {
+        if(resourceTable.keys.contains(key))
+        {
+            //已经加载的资源包就不重复加载了
+            GMLLogCenter.instance.trace("[loadResourcePick]不需要重复加载资源包:" + key);
+            return;
+        }
+        waitLoad[key] = resourcePath;
+        if(!resourceIsLoading)
+        {
+            //如果当前处于空闲状态，则直接开始加载资源。否则只能等待之前的资源加载完毕后，程序自动处理等待任务
+            loadResource();
+        }
+    }
+    
+    private func loadResource()
+    {
+        if(waitLoad.count == 0)
+        {
+            resourceIsLoading = false;
+            return;
+        }
+        resourceIsLoading = true;
+        currentResourceKey = waitLoad.keys.first;
+        if(zipTool.UnzipOpenFile(NSBundle.mainBundle().pathForResource(waitLoad[currentResourceKey], ofType: "zip"))){
             zipTool.UnzipFileToDictionary_Async()
+        }else{
+            GMLLogCenter.instance.trace("[loadResourcePick]资源包不存在 :"+waitLoad[currentResourceKey]!);
+            waitLoad.removeValueForKey(currentResourceKey);
+            loadResource();
         }
     }
     
@@ -80,8 +174,15 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
     {
         if(textureDic.keys.contains(key))
         {
+            //遍历文理集合
             return textureDic[key];
-        }else{
+        }
+        else if(resourceDataDic.keys.contains(key)){
+            //纹理集合中没有指定的纹理，则通过NSData创建一个纹理
+            textureDic[key] = GMLTool.imageByData(resourceDataDic[key]! as NSData);
+            return textureDic[key];
+        }
+        else{
             GMLLogCenter.instance.trace("[textureByName]请求的纹理资源不存在"+key);
             return nil;
         }

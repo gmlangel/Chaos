@@ -3,24 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GMLResourceManager.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():GMLResourceManager.swift">
+         contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "textureDic">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
-      </ContextState>
-      <ContextState
-         contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">
-      </ContextState>
-      <ContextState
-         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "mainLogo">
+               value = "reusltDic.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,10 +19,60 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
+         contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "reusltDic.count">
+               value = "mainLogo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GMLResourceManager.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resourceConfitDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceDataDic">
+            </PersistentString>
+            <PersistentString
+               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
+            </PersistentString>
+            <PersistentString
+               value = "resourceTable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.resourceTable[self.currentResourceKey]">
+            </PersistentString>
+            <PersistentString
+               value = "self.resourceTable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GMLResourceManager.loadResourcePick(String, resourcePath : String) -&gt; ():GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "waitLoad">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.mainScreen().scale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -49,6 +85,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "GMLResourceManager.(loadResource in _A465C4AC5CE1BAF1C5D27E7A1E1E6308)() -&gt; ():GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "waitLoad">
+            </PersistentString>
+            <PersistentString
+               value = "currentResourceKey">
+            </PersistentString>
+            <PersistentString
+               value = "resourceConfitDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceDataDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceTable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "__41-[ZipArchive UnzipFileToDictionary_Async]_block_invoke:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
@@ -56,14 +112,6 @@
             </PersistentString>
             <PersistentString
                value = "[strPath rangeOfString:@&quot;.&quot; options:NSBackwardsSearch]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIScreen.mainScreen().scale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

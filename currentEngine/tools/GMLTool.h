@@ -14,4 +14,9 @@
  根据NSData 获得SKTexture
  */
 +(SKTexture * __nullable)imageByData:(NSData * __nonnull)fileData;
+
+/**
+ 文档路径
+ */
++(NSString * __nonnull)documentPath;
 @end
