@@ -3,16 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GMLResourceManager.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textureDic">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
       </ContextState>
       <ContextState
          contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
+         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "reusltDic.count">
+               value = "mainLogo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -25,6 +33,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "reusltDic.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
@@ -33,18 +49,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "mainLogo">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "__41-[ZipArchive UnzipFileToDictionary_Async]_block_invoke:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
                value = "sleepThreadTime">
+            </PersistentString>
+            <PersistentString
+               value = "[strPath rangeOfString:@&quot;.&quot; options:NSBackwardsSearch]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -49,6 +49,10 @@
 		4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E86040B1D017A050032ABAD /* ZipArchive.mm */; };
 		4E86040F1D017F720032ABAD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E86040E1D017F720032ABAD /* libz.tbd */; };
 		4E8604111D017F7C0032ABAD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8604101D017F7C0032ABAD /* libz.tbd */; };
+		4EBE19DA1D02691400B37AFE /* GMLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE19D91D02691400B37AFE /* GMLTool.m */; };
+		4EBE19DB1D02691400B37AFE /* GMLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE19D91D02691400B37AFE /* GMLTool.m */; };
+		4EBE19DD1D026F7900B37AFE /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE19DC1D026F7900B37AFE /* SceneManager.swift */; };
+		4EBE19DE1D026F7900B37AFE /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE19DC1D026F7900B37AFE /* SceneManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +97,9 @@
 		4E86040B1D017A050032ABAD /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		4E86040E1D017F720032ABAD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		4E8604101D017F7C0032ABAD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		4EBE19D81D02691400B37AFE /* GMLTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLTool.h; sourceTree = "<group>"; };
+		4EBE19D91D02691400B37AFE /* GMLTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLTool.m; sourceTree = "<group>"; };
+		4EBE19DC1D026F7900B37AFE /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,11 +176,12 @@
 		4E8603AD1D01357E0032ABAD /* currentEngine */ = {
 			isa = PBXGroup;
 			children = (
+				4EBE19D71D0268B900B37AFE /* tools */,
+				4E8603F21D015C950032ABAD /* GMLMain.swift */,
 				4E86040A1D017A050032ABAD /* ZipArchive.h */,
 				4E86040B1D017A050032ABAD /* ZipArchive.mm */,
-				4E8603F81D0179FB0032ABAD /* minizip */,
-				4E8603F21D015C950032ABAD /* GMLMain.swift */,
 				4E8603AE1D01357E0032ABAD /* currentHeader.h */,
+				4E8603F81D0179FB0032ABAD /* minizip */,
 				4E8603AF1D01357E0032ABAD /* engineCore */,
 				4E8603C51D01357E0032ABAD /* scenes */,
 			);
@@ -199,6 +207,7 @@
 			children = (
 				4E8603C61D01357E0032ABAD /* GuideScene.swift */,
 				4E8603C71D01357E0032ABAD /* LogoScene.swift */,
+				4EBE19DC1D026F7900B37AFE /* SceneManager.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -217,6 +226,15 @@
 				4E8604011D0179FB0032ABAD /* zip.h */,
 			);
 			path = minizip;
+			sourceTree = "<group>";
+		};
+		4EBE19D71D0268B900B37AFE /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				4EBE19D81D02691400B37AFE /* GMLTool.h */,
+				4EBE19D91D02691400B37AFE /* GMLTool.m */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,9 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBE19DA1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8603311D000E440032ABAD /* GameScene.swift in Sources */,
 				4E8603E01D01357E0032ABAD /* GuideScene.swift in Sources */,
 				4E8603E51D0135B70032ABAD /* GMLLogCenter.swift in Sources */,
+				4EBE19DD1D026F7900B37AFE /* SceneManager.swift in Sources */,
 				4E8604081D0179FB0032ABAD /* zip.c in Sources */,
 				4E8603F61D01600F0032ABAD /* GMLExtensions.m in Sources */,
 				4E8603331D000E440032ABAD /* GameViewController.swift in Sources */,
@@ -349,6 +369,7 @@
 			files = (
 				4E8603F71D01600F0032ABAD /* GMLExtensions.m in Sources */,
 				4E8603E31D01357E0032ABAD /* LogoScene.swift in Sources */,
+				4EBE19DB1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8604051D0179FB0032ABAD /* mztools.c in Sources */,
 				4E8603E11D01357E0032ABAD /* GuideScene.swift in Sources */,
 				4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */,
@@ -356,6 +377,7 @@
 				4E8603CD1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
 				4E8603CF1D01357E0032ABAD /* GMLScene.swift in Sources */,
 				4E8603E61D0135B70032ABAD /* GMLLogCenter.swift in Sources */,
+				4EBE19DE1D026F7900B37AFE /* SceneManager.swift in Sources */,
 				4E86034C1D000EC70032ABAD /* GameScene.swift in Sources */,
 				4E8603F41D015C950032ABAD /* GMLMain.swift in Sources */,
 				4E8604031D0179FB0032ABAD /* ioapi.c in Sources */,

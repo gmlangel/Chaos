@@ -17,6 +17,7 @@
 #import "GMLExtensions.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <SpriteKit/SpriteKit.h>
+#import "GMLTool.h"
 
 #if (TARGET_OS_MAC && !TARGET_OS_SIMULATOR)
 #import <AppKit/AppKit.h>

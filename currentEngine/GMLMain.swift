@@ -35,7 +35,10 @@ class GMLMain:NSObject {
         //启动log系统
         GMLLogCenter.instance.start();
         
-        //呈现log页面
-        mainGameView.presentScene(LogoScene(fileNamed: "GameScene"));
+        //呈现log页面 同时加载登录界面和引导界面的资源
+        mainGameView.presentScene(LogoScene.instance);
+        GMLResourceManager.instance.loadResourcePick("aaa", resourcePath: "/MainAssets/logo/test");
+        
+        
     }
 }

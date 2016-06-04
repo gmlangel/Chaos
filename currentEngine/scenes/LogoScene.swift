@@ -12,6 +12,17 @@ class LogoScene: GMLScene {
     
     private var mainLogo:SKSpriteNode!;
     private var logoAction:SKAction!;
+    
+    static var instance:GMLScene{
+        get{
+            if(SceneManager.instance.sceneDic.keys.contains("logoScene") == false)
+            {
+                SceneManager.instance.sceneDic["logoScene"] = LogoScene(fileNamed: "GameScene");
+            }
+            return SceneManager.instance.sceneDic["logoScene"]!;
+        }
+    }
+    
     override func didMoveToView(view: SKView) {
         if(!isInited)
         {
@@ -33,7 +44,6 @@ class LogoScene: GMLScene {
         
         
         logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(autoScreen(1), duration: 0.5)])]);
-        
         
     }
     
