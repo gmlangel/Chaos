@@ -33,7 +33,7 @@ class GMLLogCenter:NSObject {
     func start()
     {
         dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss.fff";
+        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS";
         
         fileNameDateFormat = NSDateFormatter();
         fileNameDateFormat.dateFormat = "yyyy-MM-dd_HH_mm_ss";
@@ -69,7 +69,7 @@ class GMLLogCenter:NSObject {
         if(_needWriteToFile)
         {
             runningFileHandler?.seekToEndOfFile();
-            runningFileHandler?.writeData(msgAppendDateTime(msg!).dataUsingEncoding(NSUTF8StringEncoding)!);
+            runningFileHandler?.writeData(msgAppendDateTime("\(msg!)\n").dataUsingEncoding(NSUTF8StringEncoding)!);
         }
     }
     

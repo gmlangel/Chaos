@@ -37,6 +37,24 @@ class GMLMain:NSObject {
         
         //呈现log页面 同时加载登录界面和引导界面的资源
         mainGameView.presentScene(LogoScene.instance);
-        GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets/main")
+        GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
+    }
+    
+    /**
+     当主资源包加载完毕，显示登录页面
+     */
+    func onMainSorceLoadEnd(){
+        //添加一个计时器，确保logo场景动画播放完毕后再显示登陆场景
+        HeartbeatManager.instance.addTask(NSSelectorFromString("canShowLoginScene"), ti: 1, tg: self, taskName: "canShowLoginScene",repeats: true);
+    }
+    
+    func canShowLoginScene()
+    {
+        if(LogoScene.instance.isAniEnd == true)
+        {
+            HeartbeatManager.instance.removeTask("canShowLoginScene");
+            //显示登陆页面
+            mainGameView.presentScene(LoginScene.instance, transition: SKTransition.fadeWithDuration(1));
+        }
     }
 }

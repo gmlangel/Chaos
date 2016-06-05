@@ -23,4 +23,11 @@ class GMLScene:SKScene {
         isInited = true;
         self.scaleMode = .ResizeFill;
     }
+    
+    override func didMoveToView(view: SKView) {
+        if(!isInited)
+        {
+            ginit();
+        }
+    }
 }

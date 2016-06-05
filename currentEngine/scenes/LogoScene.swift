@@ -12,23 +12,19 @@ class LogoScene: GMLScene {
     
     private var mainLogo:SKSpriteNode!;
     private var logoAction:SKAction!;
-    
-    static var instance:GMLScene{
+    var isAniEnd:Bool! = false;
+    static var instance:LogoScene{
         get{
-            if(SceneManager.instance.sceneDic.keys.contains("logoScene") == false)
-            {
-                SceneManager.instance.sceneDic["logoScene"] = LogoScene(fileNamed: "GameScene");
+            struct LogoSceneIns {
+                static var _ins:LogoScene = LogoScene(fileNamed: "GameScene")!;
             }
-            return SceneManager.instance.sceneDic["logoScene"]!;
+            return LogoSceneIns._ins;
         }
     }
     
     override func didMoveToView(view: SKView) {
-        if(!isInited)
-        {
-            ginit();
-        }
-        
+        super.didMoveToView(view)
+        isAniEnd = false;
         mainLogo.removeActionForKey("chuchang");
         mainLogo.runAction(logoAction, withKey: "chuchang")
     }
@@ -43,7 +39,7 @@ class LogoScene: GMLScene {
         self.addChild(mainLogo);
         
         
-        logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(autoScreen(1), duration: 0.5)])]);
+        logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(autoScreen(1), duration: 0.5)]),SKAction.waitForDuration(1),SKAction.performSelector(NSSelectorFromString("aniEnd"), onTarget: self)]);
         
         
        // NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(test), userInfo: nil, repeats: false);
@@ -61,6 +57,14 @@ class LogoScene: GMLScene {
         mainLogo.alpha = 0;
         mainLogo.xScale = autoScreen(0.3);
         mainLogo.yScale = autoScreen(0.3);
+    }
+    
+    /**
+     动画执行完毕
+     */
+    func aniEnd()
+    {
+        isAniEnd = true;
     }
     
     override func didChangeSize(oldSize: CGSize) {

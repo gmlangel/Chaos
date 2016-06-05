@@ -16,6 +16,17 @@
             <PersistentString
                value = "self.xScale">
             </PersistentString>
+            <PersistentString
+               value = "GMLGameConfig.sourceScale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginScene.didChangeSize(CGSize) -&gt; ():LoginScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bgNode">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -39,10 +50,10 @@
                value = "resourceConfitDic">
             </PersistentString>
             <PersistentString
-               value = "resourceDataDic">
+               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
             </PersistentString>
             <PersistentString
-               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
+               value = "resourceDataDic">
             </PersistentString>
             <PersistentString
                value = "resourceTable">
@@ -50,13 +61,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
+         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
-               value = "self.resourceTable[self.currentResourceKey]">
+               value = "buffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__41-[ZipArchive UnzipFileToDictionary_Async]_block_invoke:ZipArchive.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "sleepThreadTime">
             </PersistentString>
             <PersistentString
-               value = "self.resourceTable">
+               value = "[strPath rangeOfString:@&quot;.&quot; options:NSBackwardsSearch]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -69,18 +88,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "UIScreen.mainScreen().scale">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
-         <PersistentStrings>
-            <PersistentString
-               value = "buffer">
+               value = "self.resourceConfitDic">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -105,13 +116,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__41-[ZipArchive UnzipFileToDictionary_Async]_block_invoke:ZipArchive.mm">
+         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sleepThreadTime">
-            </PersistentString>
-            <PersistentString
-               value = "[strPath rangeOfString:@&quot;.&quot; options:NSBackwardsSearch]">
+               value = "UIScreen.mainScreen().scale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

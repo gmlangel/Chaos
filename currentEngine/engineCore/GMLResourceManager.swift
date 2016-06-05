@@ -36,8 +36,11 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
     /**
      等待加载的资源包
      */
-    private var waitLoad:[String:String]!;
+    private var waitLoad:[[String:String]]!;
     
+    
+    private var completeSelectorTarget:AnyObject?;
+    private var completeSelector:Selector?;
     static var instance:GMLResourceManager{
         get{
             struct gmlResourceIns {
@@ -53,7 +56,7 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
         resourceDataDic = [String:NSData]();
         resourceTable = [String:[String]]();
         resourceConfitDic = [String:NSDictionary]();
-        waitLoad = [String:String]();
+        waitLoad = [[String:String]]();
         zipTool = ZipArchive();
         zipTool.delegate = self;
     }
@@ -63,7 +66,7 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
      */
     func ErrorMessage(msg: String!) {
         GMLLogCenter.instance.trace(msg);
-        waitLoad.removeValueForKey(currentResourceKey);
+        waitLoad.removeAtIndex(0);
         loadResource();//判断是否还有 没被加载的资源包，并加载
     }
     
@@ -121,7 +124,7 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
             
             dispatch_async(dispatch_get_main_queue(), {
                 GMLLogCenter.instance.trace("[UnzipFileAsyncComplete]资源解压完毕:" + self.currentResourceKey);
-                self.waitLoad.removeValueForKey(self.currentResourceKey);
+                self.waitLoad.removeAtIndex(0);
                 self.loadResource();//判断是否还有 没被加载的资源包，并加载
             })
         }
@@ -133,15 +136,17 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
     /**
      加载资源包
      */
-    func loadResourcePick(key:String,resourcePath:String)
+    func loadResourcePick(key:String,resourcePath:String,completeSelector:Selector? = nil,completeSelectorTarget:AnyObject? = nil)
     {
+        self.completeSelector = completeSelector;
+        self.completeSelectorTarget = completeSelectorTarget;
         if(resourceTable.keys.contains(key))
         {
             //已经加载的资源包就不重复加载了
             GMLLogCenter.instance.trace("[loadResourcePick]不需要重复加载资源包:" + key);
             return;
         }
-        waitLoad[key] = resourcePath;
+        waitLoad.append([key:resourcePath]);
         if(!resourceIsLoading)
         {
             //如果当前处于空闲状态，则直接开始加载资源。否则只能等待之前的资源加载完毕后，程序自动处理等待任务
@@ -154,15 +159,23 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
         if(waitLoad.count == 0)
         {
             resourceIsLoading = false;
+            //执行加载完毕处理函数
+            if(completeSelector != nil && completeSelectorTarget != nil)
+            {
+                if(completeSelectorTarget!.respondsToSelector(completeSelector!))
+                {
+                    completeSelectorTarget!.performSelector(completeSelector!);
+                }
+            }
             return;
         }
         resourceIsLoading = true;
-        currentResourceKey = waitLoad.keys.first;
-        if(zipTool.UnzipOpenFile(NSBundle.mainBundle().pathForResource(waitLoad[currentResourceKey], ofType: "zip"))){
+        currentResourceKey = waitLoad[0].keys.first;
+        if(zipTool.UnzipOpenFile(NSBundle.mainBundle().pathForResource(waitLoad[0].values.first, ofType: "zip"))){
             zipTool.UnzipFileToDictionary_Async()
         }else{
-            GMLLogCenter.instance.trace("[loadResourcePick]资源包不存在 :"+waitLoad[currentResourceKey]!);
-            waitLoad.removeValueForKey(currentResourceKey);
+            GMLLogCenter.instance.trace("[loadResourcePick]资源包不存在 :"+currentResourceKey+"   "+waitLoad[0].values.first!);
+            waitLoad.removeAtIndex(0);
             loadResource();
         }
     }
