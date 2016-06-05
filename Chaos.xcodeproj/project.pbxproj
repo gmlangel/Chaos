@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLEnums.swift */; };
 		4E7BF7381D03ECB20016FBA9 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF7371D03ECB20016FBA9 /* LoginScene.swift */; };
 		4E7BF7391D03ECB20016FBA9 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF7371D03ECB20016FBA9 /* LoginScene.swift */; };
 		4E7BF73D1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E2DB79B1D045A95003F7152 /* GMLEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLEnums.swift; sourceTree = "<group>"; };
 		4E7BF7371D03ECB20016FBA9 /* LoginScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		4E7BF73A1D03F3FC0016FBA9 /* main.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = main.zip; path = MainAssets/main.zip; sourceTree = "<group>"; };
 		4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartbeatManager.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		4E8603AF1D01357E0032ABAD /* engineCore */ = {
 			isa = PBXGroup;
 			children = (
+				4E2DB79B1D045A95003F7152 /* GMLEnums.swift */,
 				4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */,
 				4E8603B31D01357E0032ABAD /* GMLScene.swift */,
 				4E8603E41D0135B70032ABAD /* GMLLogCenter.swift */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E7BF7381D03ECB20016FBA9 /* LoginScene.swift in Sources */,
+				4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */,
 				4EBE19DA1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8603311D000E440032ABAD /* GameScene.swift in Sources */,
 				4E8603E01D01357E0032ABAD /* GuideScene.swift in Sources */,

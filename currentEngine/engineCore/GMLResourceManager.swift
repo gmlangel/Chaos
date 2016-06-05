@@ -96,14 +96,23 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
                 }else if(extenName == "plist")
                 {
                     let filePath = GMLTool.documentPath() + "/\(key)";
+                    //创建本地的临时配置文件，以供加载
                     if((reusltDic.valueForKey(key as! String) as! NSData).writeToFile(filePath, atomically: true))
                     {
-                        //创建本地的临时配置文件，以供加载
+                        if(key.containsString("Config."))
+                        {
+                            //主程序配置文件，一般情况下只有main资源包内才有两个这样的文件，分别是 AllMonsterConfig用于存储所有资源包内的monster的对照表。AllSceneConfig用于存储所有资源包内的scene的对照表
+                        }else if(key.containsString("Scene."))
+                        {
+                            //场景配置文件
+                        }else if(key.containsString("Monster.")){
+                            //怪物配置文件
+                        }
                         self.resourceConfitDic[keyStr] = NSDictionary(contentsOfFile: filePath);
                         //加载完毕后移除这个配置文件
                         do{
                             try NSFileManager.defaultManager().removeItemAtPath(filePath);
-                            //配置文件
+                            //配置文件,存储到资源名称对照表和配置集合中
                             self.resourceTable[self.currentResourceKey]!.append(keyStr);
                         }catch{
                             GMLLogCenter.instance.trace("[UnzipFileAsyncComplete]配置文件转换失败:\(key)");
