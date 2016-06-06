@@ -70,8 +70,7 @@ class LogoScene: GMLScene {
     override func didChangeSize(oldSize: CGSize) {
         if(isInited == true)
         {
-            mainLogo.position.x = CGRectGetMidX(self.frame);
-            mainLogo.position.y = CGRectGetMidY(self.frame);
+            gresize((self.view?.frame.size)!);
         }
     }
     
@@ -79,5 +78,10 @@ class LogoScene: GMLScene {
         //NSLog("\(self.frame)");
         
         
+    }
+    
+    override func gresize(currentSize: CGSize) {
+        mainLogo.position.x = CGRectGetMidX(self.frame);
+        mainLogo.position.y = CGRectGetMidY(self.frame);
     }
 }

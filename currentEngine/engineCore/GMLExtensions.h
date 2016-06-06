@@ -7,7 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
+#import "GMLMouseEvent.h"
 @interface SKSpriteNode (GMLEngineCore)
 
 /**
@@ -15,5 +15,7 @@
  */
 -(SKSpriteNode *)autoScreen;
 @end
+
+//------------------------------------------------------------------------------------
 
 

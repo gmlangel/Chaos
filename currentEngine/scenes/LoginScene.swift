@@ -9,8 +9,8 @@
 import Foundation
 class LoginScene: GMLScene {
     
-    private var bgNode:SKSpriteNode!;
-    private var tb_login:NSTextField!;
+    var bgNode:SKSpriteNode!;
+    var btn_beginGame:SKSpriteNode!;
     static var instance:LoginScene{
         get{
             struct LoginSceneIns {
@@ -22,10 +22,7 @@ class LoginScene: GMLScene {
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view);
-        bgNode.position = CGPoint(x: CGRectGetMidX((self.view?.frame)!), y: CGRectGetMidY((self.view?.frame)!));//居中显示
-        tb_login.frame.origin.x = (CGRectGetWidth((self.view?.frame)!) - tb_login.frame.size.width)/2;
-        tb_login.frame.origin.y = CGRectGetMidY((self.view?.frame)!) - 60;
-        self.view?.addSubview(tb_login);
+        gresize(self.size);
     }
     
     override func ginit() {
@@ -34,21 +31,28 @@ class LoginScene: GMLScene {
         bgNode = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("loginScene_bg")).autoScreen();
         self.addChild(bgNode);
         
-        tb_login = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 30));
-        tb_login.usesSingleLineMode = true;
-        tb_login.font = NSFont.systemFontOfSize(14);
-        tb_login.textColor = NSColor.blueColor();
-        tb_login.backgroundColor = NSColor.whiteColor();
-        tb_login.bordered = true;
+        
+        btn_beginGame = SKSpriteNode(color: NSColor.whiteColor(), size: CGSize(width: 120, height: 30));
+        let btn_beginGameLabel:SKLabelNode = SKLabelNode(text: "开始");
+        btn_beginGameLabel.verticalAlignmentMode = .Center;
+        btn_beginGameLabel.horizontalAlignmentMode = .Center;
+        btn_beginGame.addChild(btn_beginGameLabel);
+        
+        self.addChild(btn_beginGame);
+        
     }
     
     override func didChangeSize(oldSize: CGSize) {
         if(isInited == true)
         {
-            bgNode.position.x = CGRectGetMidX((self.view?.frame)!);
-            bgNode.position.y = CGRectGetMidY((self.view?.frame)!);
-            tb_login.frame.origin.x = (CGRectGetWidth((self.view?.frame)!) - tb_login.frame.size.width)/2;
-            tb_login.frame.origin.y = CGRectGetMidY((self.view?.frame)!) - 60;
+            gresize((self.view?.frame.size)!);
         }
+    }
+    
+    override func gresize(currentSize: CGSize) {
+        bgNode.position.x = CGRectGetMidX((self.view?.frame)!);
+        bgNode.position.y = CGRectGetMidY((self.view?.frame)!);
+        btn_beginGame.position.x = bgNode.position.x;
+        btn_beginGame.position.y = bgNode.position.y;
     }
 }

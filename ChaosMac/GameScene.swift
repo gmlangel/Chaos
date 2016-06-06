@@ -23,7 +23,7 @@ class GameScene: SKScene {
     override func mouseDown(theEvent: NSEvent) {
         /* Called when a mouse click occurs */
         
-        let location = theEvent.locationInNode(self)
+        let location = theEvent.locationInNode(self);
         
         let sprite = SKSpriteNode(imageNamed:"Spaceship")
         sprite.position = location;

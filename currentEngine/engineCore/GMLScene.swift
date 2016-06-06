@@ -24,6 +24,14 @@ class GMLScene:SKScene {
         self.scaleMode = .ResizeFill;
     }
     
+    /**
+     尺寸更改后，自适应
+     */
+    func gresize(currentSize:CGSize)
+    {
+    
+    }
+    
     override func didMoveToView(view: SKView) {
         if(!isInited)
         {
