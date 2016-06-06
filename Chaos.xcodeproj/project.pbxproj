@@ -19,6 +19,8 @@
 		4E0C8CD11D055063008719F5 /* LoginSceneExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD01D055063008719F5 /* LoginSceneExten.swift */; };
 		4E0C8CD31D0587EC008719F5 /* SelectRoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD21D0587EC008719F5 /* SelectRoleScene.swift */; };
 		4E0C8CD41D0587EC008719F5 /* SelectRoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD21D0587EC008719F5 /* SelectRoleScene.swift */; };
+		4E0C8CD61D05921F008719F5 /* SelectRoleSceneExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD51D05921F008719F5 /* SelectRoleSceneExten.swift */; };
+		4E0C8CD81D059267008719F5 /* SelectRoleSceneExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD71D059267008719F5 /* SelectRoleSceneExten.swift */; };
 		4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLEnums.swift */; };
 		4E7BF73D1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
 		4E7BF73E1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
@@ -73,6 +75,8 @@
 		4E0C8CCE1D054E51008719F5 /* LoginSceneExten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSceneExten.swift; sourceTree = "<group>"; };
 		4E0C8CD01D055063008719F5 /* LoginSceneExten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSceneExten.swift; sourceTree = "<group>"; };
 		4E0C8CD21D0587EC008719F5 /* SelectRoleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleScene.swift; sourceTree = "<group>"; };
+		4E0C8CD51D05921F008719F5 /* SelectRoleSceneExten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleSceneExten.swift; sourceTree = "<group>"; };
+		4E0C8CD71D059267008719F5 /* SelectRoleSceneExten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleSceneExten.swift; sourceTree = "<group>"; };
 		4E2DB79B1D045A95003F7152 /* GMLEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLEnums.swift; sourceTree = "<group>"; };
 		4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartbeatManager.swift; sourceTree = "<group>"; };
 		4E8603291D000E440032ABAD /* ChaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4E0C8CD01D055063008719F5 /* LoginSceneExten.swift */,
+				4E0C8CD51D05921F008719F5 /* SelectRoleSceneExten.swift */,
 			);
 			path = scenesExten;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4E0C8CCE1D054E51008719F5 /* LoginSceneExten.swift */,
+				4E0C8CD71D059267008719F5 /* SelectRoleSceneExten.swift */,
 			);
 			path = scenesExten;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				4E0C8CC61D054D9B008719F5 /* GuideScene.swift in Sources */,
 				4E8603F61D01600F0032ABAD /* GMLExtensions.m in Sources */,
 				4E8603331D000E440032ABAD /* GameViewController.swift in Sources */,
+				4E0C8CD61D05921F008719F5 /* SelectRoleSceneExten.swift in Sources */,
 				4E8603CC1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
 				4E8604021D0179FB0032ABAD /* ioapi.c in Sources */,
 				4E8603F01D01594A0032ABAD /* GMLGameConfig.m in Sources */,
@@ -414,6 +421,7 @@
 				4E8603F71D01600F0032ABAD /* GMLExtensions.m in Sources */,
 				4EBE19DB1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8604051D0179FB0032ABAD /* mztools.c in Sources */,
+				4E0C8CD81D059267008719F5 /* SelectRoleSceneExten.swift in Sources */,
 				4E0C8CCF1D054E51008719F5 /* LoginSceneExten.swift in Sources */,
 				4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */,
 				4E0C8CD41D0587EC008719F5 /* SelectRoleScene.swift in Sources */,

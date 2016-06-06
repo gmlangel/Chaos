@@ -27,6 +27,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SelectRoleScene.gresize(CGSize) -&gt; ():SelectRoleScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "roleListPanel.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[SKSpriteNode(GMLEngineCore) autoScreen]:GMLExtensions.m">
          <PersistentStrings>
             <PersistentString

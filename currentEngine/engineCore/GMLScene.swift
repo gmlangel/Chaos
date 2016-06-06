@@ -84,6 +84,7 @@ class GMLScene:SKScene {
         if(!isInited)
         {
             ginit();
+            gresize((self.view?.frame.size)!);
         }
     }
     

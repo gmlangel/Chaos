@@ -15,7 +15,6 @@ class LoginScene: GMLScene {
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view);
-        gresize(self.size);
 
     }
     

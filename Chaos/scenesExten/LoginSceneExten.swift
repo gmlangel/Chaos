@@ -24,6 +24,7 @@ class LoginSceneExten: LoginScene {
         if(btn_beginGame.frame.contains(p))
         {
             GMLLogCenter.instance.trace("登陆");
+            NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "SelectRoleScene");
         }
 //        let mons = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("Test1Monster_0")).autoScreen();
 //        self.gmlAddChild(mons);

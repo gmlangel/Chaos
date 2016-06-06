@@ -40,6 +40,8 @@ class GMLMain:NSObject {
         //呈现log页面 同时加载登录界面和引导界面的资源
         mainGameView.presentScene(LogoScene.instance);
         GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: NSSelectorFromString("changeScene:"), name: "changeScene", object: nil);
     }
     
     /**
@@ -57,6 +59,15 @@ class GMLMain:NSObject {
             HeartbeatManager.instance.removeTask("canShowLoginScene");
             //显示登陆页面
             mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
+        }
+    }
+    
+    func changeScene(notify:NSNotification)
+    {
+        let sceneName = notify.object as! String;
+        if("SelectRoleScene" == sceneName)
+        {
+            mainGameView.presentScene(SelectRoleSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
         }
     }
 }
