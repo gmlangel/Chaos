@@ -11,48 +11,41 @@ class LoginScene: GMLScene {
     
     var bgNode:SKSpriteNode!;
     var btn_beginGame:SKSpriteNode!;
-    static var instance:LoginScene{
-        get{
-            struct LoginSceneIns {
-                static var _ins:LoginScene = LoginScene(fileNamed: "GameScene")!;
-            }
-            return LoginSceneIns._ins;
-        }
-    }
+    
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view);
         gresize(self.size);
+
     }
+    
     
     override func ginit() {
         super.ginit();
         self.backgroundColor = SKColor.blackColor();
         bgNode = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("loginScene_bg")).autoScreen();
-        self.addChild(bgNode);
+        self.bgLayer.addChild(bgNode);
+
         
-        
-        btn_beginGame = SKSpriteNode(color: NSColor.whiteColor(), size: CGSize(width: 120, height: 30));
+        btn_beginGame = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 120, height: 30)).autoScreen();
         let btn_beginGameLabel:SKLabelNode = SKLabelNode(text: "开始");
+        btn_beginGameLabel.fontColor = SKColor.redColor();
         btn_beginGameLabel.verticalAlignmentMode = .Center;
         btn_beginGameLabel.horizontalAlignmentMode = .Center;
         btn_beginGame.addChild(btn_beginGameLabel);
-        
-        self.addChild(btn_beginGame);
+
+        self.contextContainerLayer.addChild(btn_beginGame);
+
         
     }
     
-    override func didChangeSize(oldSize: CGSize) {
-        if(isInited == true)
-        {
-            gresize((self.view?.frame.size)!);
-        }
-    }
+    
+    
     
     override func gresize(currentSize: CGSize) {
         bgNode.position.x = CGRectGetMidX((self.view?.frame)!);
         bgNode.position.y = CGRectGetMidY((self.view?.frame)!);
         btn_beginGame.position.x = bgNode.position.x;
-        btn_beginGame.position.y = bgNode.position.y;
+        btn_beginGame.position.y = CGRectGetMidY((self.view?.frame)!) / 2;
     }
 }

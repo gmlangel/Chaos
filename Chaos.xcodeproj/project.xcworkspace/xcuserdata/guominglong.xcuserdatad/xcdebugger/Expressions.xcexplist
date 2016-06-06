@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LoginSceneExten.touchesBegan(Set&lt;UITouch&gt;, withEvent : UIEvent?) -&gt; ():LoginSceneExten.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.children[3].zPosition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginScene.didMoveToView(SKView) -&gt; ():LoginScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "a.zPosition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -50,10 +66,10 @@
                value = "resourceConfitDic">
             </PersistentString>
             <PersistentString
-               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
+               value = "resourceDataDic">
             </PersistentString>
             <PersistentString
-               value = "resourceDataDic">
+               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
             </PersistentString>
             <PersistentString
                value = "resourceTable">
@@ -61,10 +77,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
+         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "buffer">
+               value = "self.resourceConfitDic">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -88,10 +104,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
+         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
-               value = "self.resourceConfitDic">
+               value = "buffer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

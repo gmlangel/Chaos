@@ -12,6 +12,8 @@ class GMLMain:NSObject {
      主游戏视图,唯一
      */
     private(set) var mainGameView:SKView!;
+    
+    
     static var instance:GMLMain{
         get{
             struct gmlMainIns {
@@ -54,7 +56,7 @@ class GMLMain:NSObject {
         {
             HeartbeatManager.instance.removeTask("canShowLoginScene");
             //显示登陆页面
-            mainGameView.presentScene(LoginScene.instance, transition: SKTransition.fadeWithDuration(1));
+            mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
         }
     }
 }

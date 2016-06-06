@@ -67,12 +67,6 @@ class LogoScene: GMLScene {
         isAniEnd = true;
     }
     
-    override func didChangeSize(oldSize: CGSize) {
-        if(isInited == true)
-        {
-            gresize((self.view?.frame.size)!);
-        }
-    }
     
     override func update(currentTime: NSTimeInterval) {
         //NSLog("\(self.frame)");
