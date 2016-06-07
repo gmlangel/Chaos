@@ -39,7 +39,7 @@ class GMLMain:NSObject {
         
         //呈现log页面 同时加载登录界面和引导界面的资源
         mainGameView.presentScene(LogoScene.instance);
-        GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
+        GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets1/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: NSSelectorFromString("changeScene:"), name: "changeScene", object: nil);
     }

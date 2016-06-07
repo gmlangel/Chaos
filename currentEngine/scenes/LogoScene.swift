@@ -32,7 +32,7 @@ class LogoScene: GMLScene {
     override func ginit() {
         super.ginit();
         self.backgroundColor = SKColor.whiteColor();
-        mainLogo = SKSpriteNode(imageNamed: "MainAssets/logo/mainLog").autoScreen();
+        mainLogo = SKSpriteNode(imageNamed: "MainAssets1/logo/mainLog").autoScreen();
         mainLogo.alpha = 0;
         mainLogo.normalTexture = mainLogo.texture?.textureByGeneratingNormalMap();
         mainLogo.position = CGPoint(x:CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame));
