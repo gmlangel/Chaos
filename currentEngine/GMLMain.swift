@@ -58,7 +58,7 @@ class GMLMain:NSObject {
         {
             HeartbeatManager.instance.removeTask("canShowLoginScene");
             //显示登陆页面
-            mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
+            NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "mainGameView")
         }
     }
     
@@ -68,6 +68,9 @@ class GMLMain:NSObject {
         if("SelectRoleScene" == sceneName)
         {
             mainGameView.presentScene(SelectRoleSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
+        }else if("mainGameView" == sceneName)
+        {
+            mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
         }
     }
 }

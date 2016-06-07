@@ -17,4 +17,21 @@ class SelectRoleSceneExten: SelectRoleScene {
             return SelectRoleSceneExtenExtenIns._ins;
         }
     }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        var p = (touches.first?.locationInNode(self))!;
+        if(self.btn_in.frame.contains(p))
+        {
+            self.onBtn_inClick();
+        }else if(self.btn_out.frame.contains(p))
+        {
+            self.onBtn_outClick();
+        }
+        p = (touches.first?.locationInNode(self.roleListPanel))!;
+        self.roleListPanel.enumerateChildNodesWithName("role_[0-\(self.roleListPanel.children.count)]") { (sn, nm) in
+            if(sn.containsPoint(p))
+            {
+                self.selectRoleNode(sn);
+            }
+        }
+    }
 }

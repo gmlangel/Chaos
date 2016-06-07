@@ -26,13 +26,14 @@ class LoginScene: GMLScene {
         self.bgLayer.addChild(bgNode);
 
         
-        btn_beginGame = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 120, height: 30)).autoScreen();
+        btn_beginGame = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 120, height: 30));//.autoScreen();
         let btn_beginGameLabel:SKLabelNode = SKLabelNode(text: "开始");
+        btn_beginGameLabel.fontSize = 18;
+        btn_beginGameLabel.fontName = "Chalkduster";
         btn_beginGameLabel.fontColor = SKColor.redColor();
         btn_beginGameLabel.verticalAlignmentMode = .Center;
         btn_beginGameLabel.horizontalAlignmentMode = .Center;
         btn_beginGame.addChild(btn_beginGameLabel);
-
         self.contextContainerLayer.addChild(btn_beginGame);
 
         

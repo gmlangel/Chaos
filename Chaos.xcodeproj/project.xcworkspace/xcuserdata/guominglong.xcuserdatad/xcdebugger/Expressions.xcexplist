@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "LoginSceneExten.touchesBegan(Set&lt;UITouch&gt;, withEvent : UIEvent?) -&gt; ():LoginSceneExten.swift">
+         contextName = "__41-[ZipArchive UnzipFileToDictionary_Async]_block_invoke:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
-               value = "self.children[3].zPosition">
+               value = "sleepThreadTime">
+            </PersistentString>
+            <PersistentString
+               value = "[strPath rangeOfString:@&quot;.&quot; options:NSBackwardsSearch]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,18 +17,95 @@
          contextName = "LoginScene.gresize(CGSize) -&gt; ():LoginScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "bgNode.position">
+               value = "bgNode.anchorPoint">
             </PersistentString>
             <PersistentString
-               value = "bgNode.anchorPoint">
+               value = "bgNode.position">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
+         contextName = "SelectRoleSceneExten.mouseDown(NSEvent) -&gt; ():SelectRoleSceneExten.swift">
          <PersistentStrings>
             <PersistentString
-               value = "reusltDic.count">
+               value = "&quot;role_[0-\(self.roleListPanel.children.count)]&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "node.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "buffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectRoleScene.ginit() -&gt; ():SelectRoleScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "roleListPanel.yScale">
+            </PersistentString>
+            <PersistentString
+               value = "roleListPanel.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "roleSelectBg.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "roleListPanel.size.height - lineHeight*roleListPanel.yScale">
+            </PersistentString>
+            <PersistentString
+               value = "roleSelectBg.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.mainScreen().scale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectRoleScene.gresize(CGSize) -&gt; ():SelectRoleScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "roleListPanel.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.view?.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginScene.didMoveToView(SKView) -&gt; ():LoginScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "a.zPosition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GMLScene.ginit() -&gt; ():GMLScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginScene.didChangeSize(CGSize) -&gt; ():LoginScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bgNode">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -50,28 +130,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SelectRoleScene.gresize(CGSize) -&gt; ():SelectRoleScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view?.frame">
-            </PersistentString>
-            <PersistentString
-               value = "roleListPanel.size">
-            </PersistentString>
-            <PersistentString
-               value = "self.frame.size.width">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GMLScene.ginit() -&gt; ():GMLScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[SKSpriteNode(GMLEngineCore) autoScreen]:GMLExtensions.m">
          <PersistentStrings>
             <PersistentString
@@ -79,45 +137,6 @@
             </PersistentString>
             <PersistentString
                value = "GMLGameConfig.sourceScale">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LoginScene.didChangeSize(CGSize) -&gt; ():LoginScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "bgNode">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">
-      </ContextState>
-      <ContextState
-         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
-      </ContextState>
-      <ContextState
-         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "mainLogo">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GMLResourceManager.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():GMLResourceManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "resourceConfitDic">
-            </PersistentString>
-            <PersistentString
-               value = "resourceDataDic">
-            </PersistentString>
-            <PersistentString
-               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
-            </PersistentString>
-            <PersistentString
-               value = "resourceTable">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -130,29 +149,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__41-[ZipArchive UnzipFileToDictionary_Async]_block_invoke:ZipArchive.mm">
+         contextName = "AppDelegate.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sleepThreadTime">
-            </PersistentString>
-            <PersistentString
-               value = "[strPath rangeOfString:@&quot;.&quot; options:NSBackwardsSearch]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIScreen.mainScreen().scale">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LoginScene.didMoveToView(SKView) -&gt; ():LoginScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "a.zPosition">
+               value = "reusltDic.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -165,10 +165,57 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
+         contextName = "GMLResourceManager.UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ():GMLResourceManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "buffer">
+               value = "resourceConfitDic">
+            </PersistentString>
+            <PersistentString
+               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
+            </PersistentString>
+            <PersistentString
+               value = "resourceDataDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceTable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "specialized SelectRoleSceneExten.(touchesBegan(Set&lt;UITouch&gt;, withEvent : UIEvent?) -&gt; ()).(closure #1):SelectRoleSceneExten.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sn.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginSceneExten.touchesBegan(Set&lt;UITouch&gt;, withEvent : UIEvent?) -&gt; ():LoginSceneExten.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.children[3].zPosition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MyScene.didMoveToView(NSObject) -&gt; ():MyScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SelectRoleSceneExten.touchesBegan(Set&lt;UITouch&gt;, withEvent : UIEvent?) -&gt; ():SelectRoleSceneExten.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainLogo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
