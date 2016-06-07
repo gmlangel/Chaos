@@ -34,8 +34,6 @@
 		4E86034C1D000EC70032ABAD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86034B1D000EC70032ABAD /* GameScene.swift */; };
 		4E8603501D000EC70032ABAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86034F1D000EC70032ABAD /* Assets.xcassets */; };
 		4E8603531D000EC70032ABAD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8603511D000EC70032ABAD /* MainMenu.xib */; };
-		4E86039B1D0032960032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
-		4E86039C1D0032A80032ABAD /* MainAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4E86039A1D0032960032ABAD /* MainAssets */; };
 		4E8603CC1D01357E0032ABAD /* GMLResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */; };
 		4E8603CD1D01357E0032ABAD /* GMLResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */; };
 		4E8603CE1D01357E0032ABAD /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8603B31D01357E0032ABAD /* GMLScene.swift */; };
@@ -62,6 +60,8 @@
 		4E8604111D017F7C0032ABAD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8604101D017F7C0032ABAD /* libz.tbd */; };
 		4EBE19DA1D02691400B37AFE /* GMLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE19D91D02691400B37AFE /* GMLTool.m */; };
 		4EBE19DB1D02691400B37AFE /* GMLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE19D91D02691400B37AFE /* GMLTool.m */; };
+		4EF909BE1D066BD800397A13 /* MainAssets1 in Resources */ = {isa = PBXBuildFile; fileRef = 4EF909BD1D066BD800397A13 /* MainAssets1 */; };
+		4EF909BF1D066BD800397A13 /* MainAssets1 in Resources */ = {isa = PBXBuildFile; fileRef = 4EF909BD1D066BD800397A13 /* MainAssets1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +91,6 @@
 		4E86034F1D000EC70032ABAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E8603521D000EC70032ABAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4E8603541D000EC70032ABAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E86039A1D0032960032ABAD /* MainAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainAssets; sourceTree = "<group>"; };
 		4E8603AE1D01357E0032ABAD /* currentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currentHeader.h; sourceTree = "<group>"; };
 		4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLResourceManager.swift; sourceTree = "<group>"; };
 		4E8603B31D01357E0032ABAD /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLScene.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		4E8604101D017F7C0032ABAD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		4EBE19D81D02691400B37AFE /* GMLTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLTool.h; sourceTree = "<group>"; };
 		4EBE19D91D02691400B37AFE /* GMLTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLTool.m; sourceTree = "<group>"; };
+		4EF909BD1D066BD800397A13 /* MainAssets1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainAssets1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,10 +170,10 @@
 		4E8603201D000E440032ABAD = {
 			isa = PBXGroup;
 			children = (
+				4EF909BD1D066BD800397A13 /* MainAssets1 */,
 				4E8604101D017F7C0032ABAD /* libz.tbd */,
 				4E86040E1D017F720032ABAD /* libz.tbd */,
 				4E8603AD1D01357E0032ABAD /* currentEngine */,
-				4E86039A1D0032960032ABAD /* MainAssets */,
 				4E86032B1D000E440032ABAD /* ChaosIOS */,
 				4E8603481D000EC70032ABAD /* ChaosMac */,
 				4E86032A1D000E440032ABAD /* Products */,
@@ -356,7 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E86039C1D0032A80032ABAD /* MainAssets in Resources */,
+				4EF909BE1D066BD800397A13 /* MainAssets1 in Resources */,
 				4E86033B1D000E440032ABAD /* LaunchScreen.storyboard in Resources */,
 				4E8603381D000E440032ABAD /* Assets.xcassets in Resources */,
 				4E8603361D000E440032ABAD /* Main.storyboard in Resources */,
@@ -367,9 +367,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E86039B1D0032960032ABAD /* MainAssets in Resources */,
 				4E8603501D000EC70032ABAD /* Assets.xcassets in Resources */,
 				4E8603531D000EC70032ABAD /* MainMenu.xib in Resources */,
+				4EF909BF1D066BD800397A13 /* MainAssets1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
