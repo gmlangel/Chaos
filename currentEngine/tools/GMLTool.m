@@ -7,7 +7,9 @@
 //
 
 #import "GMLTool.h"
-#if (TARGET_OS_MAC && !TARGET_OS_SIMULATOR)
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#elif (TARGET_OS_MAC && !TARGET_OS_SIMULATOR)
 #import <AppKit/AppKit.h>
 #elif(TARGET_OS_IOS || (TARGET_OS_MAC && TARGET_OS_SIMULATOR))
 #import <UIKit/UIKit.h>
@@ -17,13 +19,14 @@
 @implementation GMLTool
 //NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSAllDomainsMask, true);
 +(SKTexture * __nullable)imageByData:(NSData * __nonnull)fileData{
-#if (TARGET_OS_MAC && !TARGET_OS_SIMULATOR)
-    return [SKTexture textureWithImage:[[NSImage alloc] initWithData:fileData]];
+#if TARGET_OS_IPHONE
+return [SKTexture textureWithImage:[UIImage imageWithData:fileData]];
+#elif (TARGET_OS_MAC && !TARGET_OS_SIMULATOR)
+return [SKTexture textureWithImage:[[NSImage alloc] initWithData:fileData]];
 #elif(TARGET_OS_IOS || (TARGET_OS_MAC && TARGET_OS_SIMULATOR))
-    return [SKTexture textureWithImage:[UIImage imageWithData:fileData]];
-#else
-    return nil;
+return [SKTexture textureWithImage:[UIImage imageWithData:fileData]];
 #endif
+
 }
 
 

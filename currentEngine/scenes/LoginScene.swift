@@ -42,9 +42,9 @@ class LoginScene: GMLScene {
     
     
     override func gresize(currentSize: CGSize) {
-        bgNode.position.x = CGRectGetMidX((self.view?.frame)!);
-        bgNode.position.y = CGRectGetMidY((self.view?.frame)!);
+        bgNode.position.x = CGRectGetMidX(self.frame);
+        bgNode.position.y = CGRectGetMidY(self.frame);
         btn_beginGame.position.x = bgNode.position.x;
-        btn_beginGame.position.y = CGRectGetMidY((self.view?.frame)!) / 2;
+        btn_beginGame.position.y = CGRectGetMidY(self.frame) / 2;
     }
 }

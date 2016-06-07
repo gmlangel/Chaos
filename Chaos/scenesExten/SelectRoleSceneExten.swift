@@ -12,7 +12,7 @@ class SelectRoleSceneExten: SelectRoleScene {
     static var instance:SelectRoleSceneExten{
         get{
             struct SelectRoleSceneExtenExtenIns {
-                static var _ins:SelectRoleSceneExten = SelectRoleSceneExten(fileNamed: "GameScene")!;
+                static var _ins:SelectRoleSceneExten = SelectRoleSceneExten(size: GMLMain.instance.mainGameView.frame.size);
             }
             return SelectRoleSceneExtenExtenIns._ins;
         }

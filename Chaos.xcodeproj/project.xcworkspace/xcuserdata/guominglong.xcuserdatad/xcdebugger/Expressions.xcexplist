@@ -11,10 +11,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LoginScene.didMoveToView(SKView) -&gt; ():LoginScene.swift">
+         contextName = "LoginScene.gresize(CGSize) -&gt; ():LoginScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "a.zPosition">
+               value = "bgNode.position">
+            </PersistentString>
+            <PersistentString
+               value = "bgNode.anchorPoint">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -27,10 +30,44 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "GMLResourceManager.(loadResource in _A465C4AC5CE1BAF1C5D27E7A1E1E6308)() -&gt; ():GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "waitLoad">
+            </PersistentString>
+            <PersistentString
+               value = "currentResourceKey">
+            </PersistentString>
+            <PersistentString
+               value = "resourceConfitDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceDataDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceTable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SelectRoleScene.gresize(CGSize) -&gt; ():SelectRoleScene.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self.view?.frame">
+            </PersistentString>
+            <PersistentString
                value = "roleListPanel.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GMLScene.ginit() -&gt; ():GMLScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -104,6 +141,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.mainScreen().scale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginScene.didMoveToView(SKView) -&gt; ():LoginScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "a.zPosition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "GMLResourceManager.loadResourcePick(String, resourcePath : String) -&gt; ():GMLResourceManager.swift">
          <PersistentStrings>
             <PersistentString
@@ -116,34 +169,6 @@
          <PersistentStrings>
             <PersistentString
                value = "buffer">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GMLResourceManager.(loadResource in _A465C4AC5CE1BAF1C5D27E7A1E1E6308)() -&gt; ():GMLResourceManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "waitLoad">
-            </PersistentString>
-            <PersistentString
-               value = "currentResourceKey">
-            </PersistentString>
-            <PersistentString
-               value = "resourceConfitDic">
-            </PersistentString>
-            <PersistentString
-               value = "resourceDataDic">
-            </PersistentString>
-            <PersistentString
-               value = "resourceTable">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GameViewController.viewDidLoad() -&gt; ():GameViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIScreen.mainScreen().scale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

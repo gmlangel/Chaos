@@ -37,7 +37,7 @@ class SelectRoleScene: GMLScene {
             {
                 ty = ty + CGFloat(i/4) * roleSelectBg.size.height;
             }
-            tx = CGFloat(i%4) * roleSelectBg.size.width + 50;
+            tx = CGFloat(i%4) * roleSelectBg.size.width + roleSelectBg.size.width/2;
             let roleMc = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("Test1Monster_0"));
             roleListPanel.addChild(roleMc);
             roleMc.position = CGPoint(x: tx, y: ty);
@@ -50,8 +50,8 @@ class SelectRoleScene: GMLScene {
     }
     
     override func gresize(currentSize: CGSize) {
-        roleListPanel.position.x = ((self.view?.frame.size.width)! -  roleListPanel.frame.size.width)/2;
-        roleListPanel.position.y = ((self.view?.frame.size.height)! -  roleListPanel.frame.size.height)/2;
+        roleListPanel.position.x = (self.frame.size.width -  roleListPanel.frame.size.width)/2;
+        roleListPanel.position.y = (self.frame.size.height -  roleListPanel.frame.size.height)/2;
     }
     
     

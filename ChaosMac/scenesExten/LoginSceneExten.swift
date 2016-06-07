@@ -13,7 +13,7 @@ class LoginSceneExten: LoginScene {
     static var instance:LoginSceneExten{
         get{
             struct LoginSceneExtenIns {
-                static var _ins:LoginSceneExten = LoginSceneExten(fileNamed: "GameScene")!;
+                static var _ins:LoginSceneExten = LoginSceneExten(size: GMLMain.instance.mainGameView.frame.size);
             }
             return LoginSceneExtenIns._ins;
         }
