@@ -9,10 +9,10 @@
 import Foundation
 import SpriteKit
 class SelectRoleScene: GMLScene {
-    public var roleListPanel:SKSpriteNode!;
+    var roleListPanel:SKSpriteNode!;
     private var roleSelectBg:SKSpriteNode!;
-    public var btn_in:SKSpriteNode!;
-    public var btn_out:SKSpriteNode!;
+    var btn_in:SKSpriteNode!;
+    var btn_out:SKSpriteNode!;
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view);
         
@@ -25,8 +25,6 @@ class SelectRoleScene: GMLScene {
         roleSelectBg = SKSpriteNode(color: SKColor.redColor(), size: CGSize(width: 150, height: 200));
         
         roleListPanel = SKSpriteNode(color: SKColor.blueColor(), size: CGSize(width: roleSelectBg.size.width * 4, height: roleSelectBg.size.height * 2));
-        roleListPanel.xScale = autoScreen(1);
-        roleListPanel.yScale = autoScreen(1);
         roleListPanel.addChild(roleSelectBg);
         roleListPanel.anchorPoint = CGPoint(x: 0, y: 0);
         self.contextContainerLayer.addChild(roleListPanel);
@@ -67,7 +65,7 @@ class SelectRoleScene: GMLScene {
     
     private func createBtn(text:String)->SKSpriteNode
     {
-        let node = SKSpriteNode(color: SKColor.redColor(), size: CGSize(width: 100, height: 30));//.autoScreen();
+        let node = SKSpriteNode(color: SKColor.redColor(), size: CGSize(width: 100, height: 30));
         let lab = SKLabelNode(text: text);
         lab.fontSize = 18;
         lab.fontName = "Chalkduster";
@@ -79,8 +77,9 @@ class SelectRoleScene: GMLScene {
     }
     
     override func gresize(currentSize: CGSize) {
-        roleListPanel.position.x = (self.frame.size.width -  roleListPanel.frame.size.width)/2;
-        roleListPanel.position.y = (self.frame.size.height -  roleListPanel.frame.size.height)/2;
+        let tempScale = autoScreen(1);
+        roleListPanel.position.x = (self.frame.size.width/tempScale -  roleListPanel.frame.size.width)/2;
+        roleListPanel.position.y = (self.frame.size.height/tempScale -  roleListPanel.frame.size.height)/2;
         btn_out.position.x = roleListPanel.position.x + btn_out.size.width / 2;
         btn_out.position.y = roleListPanel.position.y - 30;
         

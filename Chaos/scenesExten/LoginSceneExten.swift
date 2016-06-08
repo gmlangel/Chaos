@@ -20,7 +20,7 @@ class LoginSceneExten: LoginScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let p = (touches.first?.locationInNode(self))!;
+        let p = (touches.first?.locationInNode(self.contextContainerLayer))!;
         if(btn_beginGame.frame.contains(p))
         {
             GMLLogCenter.instance.trace("登陆");

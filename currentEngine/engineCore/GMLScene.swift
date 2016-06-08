@@ -42,6 +42,12 @@ class GMLScene:SKScene {
      */
     private(set) var uppermostLayer:SKNode!;
     
+    
+    /**
+     场景名称
+     */
+    var sceneName:String! = "";
+    
     /**
      初始化函数
      */
@@ -49,27 +55,26 @@ class GMLScene:SKScene {
     {
         isInited = true;
         self.scaleMode = .ResizeFill;
-        bgLayer = SKNode();
-        bgLayer.zPosition = 0;
-        
-        
-        sceneBottomLayer = SKNode();
-        sceneBottomLayer.zPosition = 1;
-        
-        
-        contextContainerLayer = SKNode();
-        contextContainerLayer.zPosition = 2;
-        
-        sceneTopLayer = SKNode();
-        sceneTopLayer.zPosition = 3;
-        
-        uppermostLayer = SKNode();
-        uppermostLayer.zPosition = 10000;
+        bgLayer = createContainerNode(0);
+        sceneBottomLayer = createContainerNode(1);
+        contextContainerLayer = createContainerNode(2);
+        sceneTopLayer = createContainerNode(3);
+        uppermostLayer = createContainerNode(10000);
         self.addChild(bgLayer);
         self.addChild(sceneBottomLayer);
         self.addChild(contextContainerLayer);
         self.addChild(sceneTopLayer);
         self.addChild(uppermostLayer);
+    }
+    
+    
+    private func createContainerNode(zp:CGFloat)-> SKNode
+    {
+        let node = SKNode();
+        node.zPosition = zp;
+        node.xScale = autoScreen(1);
+        node.yScale = autoScreen(1);
+        return node;
     }
     
     /**

@@ -21,6 +21,14 @@
 		4E0C8CD41D0587EC008719F5 /* SelectRoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD21D0587EC008719F5 /* SelectRoleScene.swift */; };
 		4E0C8CD61D05921F008719F5 /* SelectRoleSceneExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD51D05921F008719F5 /* SelectRoleSceneExten.swift */; };
 		4E0C8CD81D059267008719F5 /* SelectRoleSceneExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD71D059267008719F5 /* SelectRoleSceneExten.swift */; };
+		4E0C8CDA1D07BC0A008719F5 /* PreloadScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD91D07BC0A008719F5 /* PreloadScene.swift */; };
+		4E0C8CDB1D07BC0A008719F5 /* PreloadScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CD91D07BC0A008719F5 /* PreloadScene.swift */; };
+		4E0C8CDD1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CDC1D07FD82008719F5 /* GMLDynamicScene.swift */; };
+		4E0C8CDE1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CDC1D07FD82008719F5 /* GMLDynamicScene.swift */; };
+		4E0C8CE01D07FDEF008719F5 /* GMLMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */; };
+		4E0C8CE11D07FDEF008719F5 /* GMLMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */; };
+		4E0C8CE31D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */; };
+		4E0C8CE41D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */; };
 		4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLEnums.swift */; };
 		4E7BF73D1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
 		4E7BF73E1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
@@ -75,6 +83,10 @@
 		4E0C8CD21D0587EC008719F5 /* SelectRoleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleScene.swift; sourceTree = "<group>"; };
 		4E0C8CD51D05921F008719F5 /* SelectRoleSceneExten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleSceneExten.swift; sourceTree = "<group>"; };
 		4E0C8CD71D059267008719F5 /* SelectRoleSceneExten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleSceneExten.swift; sourceTree = "<group>"; };
+		4E0C8CD91D07BC0A008719F5 /* PreloadScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreloadScene.swift; sourceTree = "<group>"; };
+		4E0C8CDC1D07FD82008719F5 /* GMLDynamicScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLDynamicScene.swift; sourceTree = "<group>"; };
+		4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLMonster.swift; sourceTree = "<group>"; };
+		4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLDynamicSceneFactory.swift; sourceTree = "<group>"; };
 		4E2DB79B1D045A95003F7152 /* GMLEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLEnums.swift; sourceTree = "<group>"; };
 		4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartbeatManager.swift; sourceTree = "<group>"; };
 		4E8603291D000E440032ABAD /* ChaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +157,7 @@
 				4E0C8CC41D054D9B008719F5 /* LoginScene.swift */,
 				4E0C8CC51D054D9B008719F5 /* LogoScene.swift */,
 				4E0C8CD21D0587EC008719F5 /* SelectRoleScene.swift */,
+				4E0C8CD91D07BC0A008719F5 /* PreloadScene.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -246,6 +259,9 @@
 				4E8603EF1D01594A0032ABAD /* GMLGameConfig.m */,
 				4E0C8CAA1D054648008719F5 /* GMLMouseEvent.h */,
 				4E0C8CAB1D054648008719F5 /* GMLMouseEvent.m */,
+				4E0C8CDC1D07FD82008719F5 /* GMLDynamicScene.swift */,
+				4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */,
+				4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */,
 			);
 			path = engineCore;
 			sourceTree = "<group>";
@@ -381,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0C8CCA1D054D9B008719F5 /* LogoScene.swift in Sources */,
+				4E0C8CDD1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */,
 				4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */,
 				4EBE19DA1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8603311D000E440032ABAD /* GameScene.swift in Sources */,
@@ -393,8 +410,11 @@
 				4E8603CC1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
 				4E8604021D0179FB0032ABAD /* ioapi.c in Sources */,
 				4E8603F01D01594A0032ABAD /* GMLGameConfig.m in Sources */,
+				4E0C8CDA1D07BC0A008719F5 /* PreloadScene.swift in Sources */,
 				4E7BF73D1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */,
+				4E0C8CE01D07FDEF008719F5 /* GMLMonster.swift in Sources */,
 				4E0C8CD11D055063008719F5 /* LoginSceneExten.swift in Sources */,
+				4E0C8CE31D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */,
 				4E8604061D0179FB0032ABAD /* unzip.c in Sources */,
 				4E86040C1D017A050032ABAD /* ZipArchive.mm in Sources */,
 				4E0C8CD31D0587EC008719F5 /* SelectRoleScene.swift in Sources */,
@@ -414,10 +434,12 @@
 				4E8603F71D01600F0032ABAD /* GMLExtensions.m in Sources */,
 				4EBE19DB1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8604051D0179FB0032ABAD /* mztools.c in Sources */,
+				4E0C8CDB1D07BC0A008719F5 /* PreloadScene.swift in Sources */,
 				4E0C8CD81D059267008719F5 /* SelectRoleSceneExten.swift in Sources */,
 				4E0C8CCF1D054E51008719F5 /* LoginSceneExten.swift in Sources */,
 				4E86040D1D017A050032ABAD /* ZipArchive.mm in Sources */,
 				4E0C8CD41D0587EC008719F5 /* SelectRoleScene.swift in Sources */,
+				4E0C8CE41D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */,
 				4E0C8CC91D054D9B008719F5 /* LoginScene.swift in Sources */,
 				4E8604071D0179FB0032ABAD /* unzip.c in Sources */,
 				4E8603CD1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
@@ -429,8 +451,10 @@
 				4E0C8CCB1D054D9B008719F5 /* LogoScene.swift in Sources */,
 				4E8603F41D015C950032ABAD /* GMLMain.swift in Sources */,
 				4E8604031D0179FB0032ABAD /* ioapi.c in Sources */,
+				4E0C8CDE1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */,
 				4E8604091D0179FB0032ABAD /* zip.c in Sources */,
 				4E8603F11D01594A0032ABAD /* GMLGameConfig.m in Sources */,
+				4E0C8CE11D07FDEF008719F5 /* GMLMonster.swift in Sources */,
 				4E86034A1D000EC70032ABAD /* AppDelegate.swift in Sources */,
 				4E7BF73E1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */,
 			);

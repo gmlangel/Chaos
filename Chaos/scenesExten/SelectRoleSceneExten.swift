@@ -18,7 +18,7 @@ class SelectRoleSceneExten: SelectRoleScene {
         }
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        var p = (touches.first?.locationInNode(self))!;
+        var p = (touches.first?.locationInNode(self.contextContainerLayer))!;
         if(self.btn_in.frame.contains(p))
         {
             self.onBtn_inClick();
@@ -27,7 +27,7 @@ class SelectRoleSceneExten: SelectRoleScene {
             self.onBtn_outClick();
         }
         p = (touches.first?.locationInNode(self.roleListPanel))!;
-        self.roleListPanel.enumerateChildNodesWithName("role_[0-\(self.roleListPanel.children.count)]") { (sn, nm) in
+        self.roleListPanel.enumerateChildNodesWithName("role_*") { (sn, nm) in
             if(sn.containsPoint(p))
             {
                 self.selectRoleNode(sn);

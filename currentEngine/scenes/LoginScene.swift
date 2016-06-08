@@ -22,11 +22,11 @@ class LoginScene: GMLScene {
     override func ginit() {
         super.ginit();
         self.backgroundColor = SKColor.blackColor();
-        bgNode = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("loginScene_bg")).autoScreen();
+        bgNode = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("loginScene_bg"))
         self.bgLayer.addChild(bgNode);
 
         
-        btn_beginGame = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 120, height: 30));//.autoScreen();
+        btn_beginGame = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 120, height: 30));
         let btn_beginGameLabel:SKLabelNode = SKLabelNode(text: "开始");
         btn_beginGameLabel.fontSize = 18;
         btn_beginGameLabel.fontName = "Chalkduster";
@@ -43,9 +43,10 @@ class LoginScene: GMLScene {
     
     
     override func gresize(currentSize: CGSize) {
-        bgNode.position.x = CGRectGetMidX(self.frame);
-        bgNode.position.y = CGRectGetMidY(self.frame);
+        let tempScale = autoScreen(1);
+        bgNode.position.x = CGRectGetMidX(self.frame) / tempScale;
+        bgNode.position.y = CGRectGetMidY(self.frame) / tempScale;
         btn_beginGame.position.x = bgNode.position.x;
-        btn_beginGame.position.y = CGRectGetMidY(self.frame) / 2;
+        btn_beginGame.position.y = CGRectGetMidY(self.frame) / 2 / tempScale;
     }
 }

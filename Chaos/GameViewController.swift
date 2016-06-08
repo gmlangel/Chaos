@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
         //启动游戏
         let arr = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true);
         GMLGameConfig.setLogPaths([arr[0]]);
-        GMLGameConfig.setSourceScale(0.5);
+        GMLGameConfig.setSourceScale(1.0/UIScreen.mainScreen().scale);
         GMLMain.instance.start(self.view as! SKView);
     }
 

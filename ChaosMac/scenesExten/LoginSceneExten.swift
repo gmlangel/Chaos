@@ -20,7 +20,7 @@ class LoginSceneExten: LoginScene {
     }
     
     override func mouseDown(theEvent: NSEvent) {
-        let p = theEvent.locationInNode(self);
+        let p = theEvent.locationInNode(self.contextContainerLayer);
         if(btn_beginGame.frame.contains(p))
         {
             GMLLogCenter.instance.trace("登陆");

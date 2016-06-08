@@ -18,7 +18,7 @@ class SelectRoleSceneExten: SelectRoleScene {
         }
     }
     override func mouseDown(theEvent: NSEvent) {
-        var p = theEvent.locationInNode(self);
+        var p = theEvent.locationInNode(self.contextContainerLayer);
         if(self.btn_in.frame.contains(p))
         {
             self.onBtn_inClick();

@@ -19,6 +19,37 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         /* Pick a size for the scene */
         
+        //写scene mapbg消息
+        //mainsceneMap
+//        let str = NSBundle.mainBundle().pathForResource("MainAssets1/main/DiqiuScene", ofType: "plist")!;
+//        let config = NSMutableDictionary(contentsOfFile: str);
+//        let tarr:NSMutableArray = NSMutableArray();
+//        
+//        var i = 13;
+//        var j = 13;
+//        var tcount = j*13;
+//        while(i>0){
+//            tarr.addObject("mainsceneMap_\(tcount-i+1)");
+//            if(i == 1)
+//            {
+//                j--;
+//                tcount = j * 13;
+//            }
+//            i--;
+//            if(j>0 && i == 0)
+//            {
+//                i = 13;
+//            }
+//        }
+//        
+//        config?.setValue(tarr, forKey: "bg");
+//        
+//        NSFileManager.defaultManager().createFileAtPath(GMLTool.documentPath()+"/DiqiuScene.plist", contents: nil, attributes: nil);
+//        config?.writeToFile(GMLTool.documentPath()+"/DiqiuScene.plist", atomically: false);
+
+        
+        
+        
         //启动游戏
         let arr = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true);
         GMLGameConfig.setLogPaths([arr[0]]);
