@@ -89,8 +89,8 @@ class GMLScene:SKScene {
         if(!isInited)
         {
             ginit();
-            gresize(self.frame.size);
         }
+        gresize(self.frame.size);
     }
     
     override func didChangeSize(oldSize: CGSize) {

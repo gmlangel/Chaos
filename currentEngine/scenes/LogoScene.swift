@@ -58,6 +58,7 @@ class LogoScene: GMLScene {
     func aniEnd()
     {
         isAniEnd = true;
+        NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "PrelaodScene");
     }
     
     

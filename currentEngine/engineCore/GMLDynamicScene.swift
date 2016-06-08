@@ -84,6 +84,11 @@ class GMLDynamicScene: GMLScene {
 
     }
     
+    override func gresize(currentSize: CGSize) {
+        //self.anchorPoint = CGPoint(x: -autoScreen(CGFloat(dic.valueForKey("x") as! NSNumber))/self.size.width, y: -autoScreen(CGFloat(dic.valueForKey("y") as! NSNumber))/self.size.height);
+        NSLog("\(self.anchorPoint)");
+    }
+
     /**
      销毁
      */

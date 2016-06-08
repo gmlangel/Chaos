@@ -37,6 +37,7 @@ class GMLMain:NSObject {
         //启动log系统
         GMLLogCenter.instance.start();
         
+        
         //呈现log页面 同时加载登录界面和引导界面的资源
         mainGameView.presentScene(LogoScene.instance);
         GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets1/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
@@ -54,29 +55,42 @@ class GMLMain:NSObject {
     
     func canShowLoginScene()
     {
-        if(LogoScene.instance.isAniEnd == true)
+        if(self.mainGameView.scene == PreloadScene.instance)
         {
             HeartbeatManager.instance.removeTask("canShowLoginScene");
             //显示登陆页面
-            NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "mainGameView")
+            PreloadScene.instance.stopLoading("mainGameView");
         }
     }
     
     func changeScene(notify:NSNotification)
     {
         let sceneName = notify.object as! String;
-        if("SelectRoleScene" == sceneName)
+        if("PrelaodScene" == sceneName)
+        {
+            mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fadeWithDuration(1));
+        }else if("SelectRoleScene" == sceneName)
         {
             mainGameView.presentScene(SelectRoleSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
         }else if("mainGameView" == sceneName)
         {
             mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
         }else{
-            if let config = GMLResourceManager.instance.configByName(sceneName){
-                let goScene = GMLDynamicScene(sceneConfig:config);
-                goScene.name = sceneName;
-                mainGameView.presentScene(goScene, transition: SKTransition.fadeWithDuration(1));
-            }
+            //显示预加载
+            mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fadeWithDuration(1));
+            //开启一个异步线程，构建即将呈现的场景
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+                if let config = GMLResourceManager.instance.configByName(sceneName){
+                    let goScene = GMLDynamicScene(sceneConfig:config);
+                    goScene.name = sceneName;
+                    NSThread.sleepForTimeInterval(1);
+                    PreloadScene.instance.stopLoading();
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                        self.mainGameView.presentScene(goScene, transition: SKTransition.fadeWithDuration(1));
+                    })
+                }
+            })
+            
         }
     }
 }
