@@ -46,6 +46,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "GMLDynamicScene.init(sceneConfig : NSDictionary) -&gt; GMLDynamicScene:GMLDynamicScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contextSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[SKSpriteNode(GMLEngineCore) autoScreen]:GMLExtensions.m">
          <PersistentStrings>
             <PersistentString
@@ -63,6 +71,9 @@
                value = "bgNode">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.applicationDidFinishLaunching(NSNotification) -&gt; ():AppDelegate.swift">
       </ContextState>
       <ContextState
          contextName = "MyScene.didMoveToView(SKView) -&gt; ():MyScene.swift">

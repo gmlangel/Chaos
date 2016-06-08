@@ -92,7 +92,10 @@ class SelectRoleScene: GMLScene {
      */
     func onBtn_inClick()
     {
-        
+        /**
+        进入场景
+        */
+        NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "DiqiuScene");
     }
     
     /**

@@ -71,6 +71,12 @@ class GMLMain:NSObject {
         }else if("mainGameView" == sceneName)
         {
             mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
+        }else{
+            if let config = GMLResourceManager.instance.configByName(sceneName){
+                let goScene = GMLDynamicScene(sceneConfig:config);
+                goScene.name = sceneName;
+                mainGameView.presentScene(goScene, transition: SKTransition.fadeWithDuration(1));
+            }
         }
     }
 }

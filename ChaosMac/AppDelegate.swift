@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
         
         //写scene mapbg消息
         //mainsceneMap
-//        let str = NSBundle.mainBundle().pathForResource("MainAssets1/main/DiqiuScene", ofType: "plist")!;
+//        let str = GMLTool.documentPath()+"/DiqiuScene.plist";
 //        let config = NSMutableDictionary(contentsOfFile: str);
 //        let tarr:NSMutableArray = NSMutableArray();
 //        
@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
 //        var j = 13;
 //        var tcount = j*13;
 //        while(i>0){
-//            tarr.addObject("mainsceneMap_\(tcount-i+1)");
+//            tarr.addObject(["name":"mainsceneMap_\(tcount-i+1)","x":(13-i)*512+256,"y":(13-j)*512+256]);
 //            if(i == 1)
 //            {
 //                j--;
@@ -44,8 +44,8 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
 //        
 //        config?.setValue(tarr, forKey: "bg");
 //        
-//        NSFileManager.defaultManager().createFileAtPath(GMLTool.documentPath()+"/DiqiuScene.plist", contents: nil, attributes: nil);
-//        config?.writeToFile(GMLTool.documentPath()+"/DiqiuScene.plist", atomically: false);
+//        NSFileManager.defaultManager().createFileAtPath(GMLTool.documentPath()+"/DiqiuScene2.plist", contents: nil, attributes: nil);
+//        config?.writeToFile(GMLTool.documentPath()+"/DiqiuScene2.plist", atomically: false);
 
         
         

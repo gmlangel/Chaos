@@ -22,9 +22,9 @@ class GMLDynamicSceneFactory: NSObject {
     /**
      通过配置文件生成动态场景
      */
-    func createDynamicScene(sceneConfig:NSDictionary)->GMLDynamicScene
-    {
-        let gmlDynaScene = GMLDynamicScene(size:GMLMain.instance.mainGameView.frame.size);
-        return gmlDynaScene;
-    }
+//    func createDynamicScene(sceneConfig:NSDictionary)->GMLDynamicScene
+//    {
+//        let gmlDynaScene = GMLDynamicScene(size:GMLMain.instance.mainGameView.frame.size);
+//        return gmlDynaScene;
+//    }
 }

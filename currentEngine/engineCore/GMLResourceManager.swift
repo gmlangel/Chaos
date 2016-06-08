@@ -210,5 +210,17 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
         }
     }
     
+    /**
+     根据key获取配置文件
+     */
+    func configByName(key:String)->NSDictionary?{
+        if(resourceConfitDic.keys.contains(key))
+        {
+            return resourceConfitDic[key];
+        }else{
+            return nil;
+        }
+    }
+    
     
 }
