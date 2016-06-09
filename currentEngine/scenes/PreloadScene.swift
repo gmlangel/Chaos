@@ -20,7 +20,7 @@ class PreloadScene: GMLScene {
     private var loadingAk:SKAction!;
     private var loadingInterval:Double = 1/12;//loading动画的间隔
     private var tsize:CGSize!;
-    public var loadingTime:NSTimeInterval! = 5;//loading动画的完整执行时间
+    var loadingTime:NSTimeInterval! = 5;//loading动画的完整执行时间
     
     private var stopAc:SKAction!;
     private var wanttogoSceneName:String!;//将要去的下一个场景
@@ -93,13 +93,17 @@ class PreloadScene: GMLScene {
     }
     
     func onstopAni(){
-        loadingNode.removeAllActions();
-        self.removeAllActions();
+        
         //如果wanttogoSceneName不为空字符串，则跳转至指定的场景
         if(wanttogoSceneName != "")
         {
             NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: wanttogoSceneName);
         }
+    }
+    
+    override func willMoveFromView(view: SKView) {
+        loadingNode.removeAllActions();
+        self.removeAllActions();
     }
     
     override func gresize(currentSize: CGSize) {

@@ -29,7 +29,12 @@
 		4E0C8CE11D07FDEF008719F5 /* GMLMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */; };
 		4E0C8CE31D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */; };
 		4E0C8CE41D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */; };
-		4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLEnums.swift */; };
+		4E2DB79C1D045A95003F7152 /* GMLAniType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLAniType.swift */; };
+		4E33052E1D0905AE00B2B9D3 /* MonsterAlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33052D1D0905AE00B2B9D3 /* MonsterAlignType.swift */; };
+		4E33052F1D0905AE00B2B9D3 /* MonsterAlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33052D1D0905AE00B2B9D3 /* MonsterAlignType.swift */; };
+		4E3305301D0905F200B2B9D3 /* GMLAniType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLAniType.swift */; };
+		4E3305321D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */; };
+		4E3305331D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */; };
 		4E7BF73D1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
 		4E7BF73E1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
 		4E86032D1D000E440032ABAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86032C1D000E440032ABAD /* AppDelegate.swift */; };
@@ -87,7 +92,9 @@
 		4E0C8CDC1D07FD82008719F5 /* GMLDynamicScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLDynamicScene.swift; sourceTree = "<group>"; };
 		4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLMonster.swift; sourceTree = "<group>"; };
 		4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLDynamicSceneFactory.swift; sourceTree = "<group>"; };
-		4E2DB79B1D045A95003F7152 /* GMLEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLEnums.swift; sourceTree = "<group>"; };
+		4E2DB79B1D045A95003F7152 /* GMLAniType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLAniType.swift; sourceTree = "<group>"; };
+		4E33052D1D0905AE00B2B9D3 /* MonsterAlignType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterAlignType.swift; sourceTree = "<group>"; };
+		4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLContactTestBitMaskEnum.swift; sourceTree = "<group>"; };
 		4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartbeatManager.swift; sourceTree = "<group>"; };
 		4E8603291D000E440032ABAD /* ChaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E86032C1D000E440032ABAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,7 +256,7 @@
 		4E8603AF1D01357E0032ABAD /* engineCore */ = {
 			isa = PBXGroup;
 			children = (
-				4E2DB79B1D045A95003F7152 /* GMLEnums.swift */,
+				4E2DB79B1D045A95003F7152 /* GMLAniType.swift */,
 				4E8603B21D01357E0032ABAD /* GMLResourceManager.swift */,
 				4E8603B31D01357E0032ABAD /* GMLScene.swift */,
 				4E8603E41D0135B70032ABAD /* GMLLogCenter.swift */,
@@ -262,6 +269,8 @@
 				4E0C8CDC1D07FD82008719F5 /* GMLDynamicScene.swift */,
 				4E0C8CDF1D07FDEF008719F5 /* GMLMonster.swift */,
 				4E0C8CE21D08009B008719F5 /* GMLDynamicSceneFactory.swift */,
+				4E33052D1D0905AE00B2B9D3 /* MonsterAlignType.swift */,
+				4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */,
 			);
 			path = engineCore;
 			sourceTree = "<group>";
@@ -398,7 +407,7 @@
 			files = (
 				4E0C8CCA1D054D9B008719F5 /* LogoScene.swift in Sources */,
 				4E0C8CDD1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */,
-				4E2DB79C1D045A95003F7152 /* GMLEnums.swift in Sources */,
+				4E2DB79C1D045A95003F7152 /* GMLAniType.swift in Sources */,
 				4EBE19DA1D02691400B37AFE /* GMLTool.m in Sources */,
 				4E8603311D000E440032ABAD /* GameScene.swift in Sources */,
 				4E8603E51D0135B70032ABAD /* GMLLogCenter.swift in Sources */,
@@ -416,10 +425,12 @@
 				4E0C8CD11D055063008719F5 /* LoginSceneExten.swift in Sources */,
 				4E0C8CE31D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */,
 				4E8604061D0179FB0032ABAD /* unzip.c in Sources */,
+				4E33052E1D0905AE00B2B9D3 /* MonsterAlignType.swift in Sources */,
 				4E86040C1D017A050032ABAD /* ZipArchive.mm in Sources */,
 				4E0C8CD31D0587EC008719F5 /* SelectRoleScene.swift in Sources */,
 				4E0C8CC81D054D9B008719F5 /* LoginScene.swift in Sources */,
 				4E86032D1D000E440032ABAD /* AppDelegate.swift in Sources */,
+				4E3305321D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift in Sources */,
 				4E8603CE1D01357E0032ABAD /* GMLScene.swift in Sources */,
 				4E8603F31D015C950032ABAD /* GMLMain.swift in Sources */,
 				4E8604041D0179FB0032ABAD /* mztools.c in Sources */,
@@ -445,6 +456,7 @@
 				4E8603CD1D01357E0032ABAD /* GMLResourceManager.swift in Sources */,
 				4E8603CF1D01357E0032ABAD /* GMLScene.swift in Sources */,
 				4E0C8CC71D054D9B008719F5 /* GuideScene.swift in Sources */,
+				4E3305331D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift in Sources */,
 				4E0C8CAD1D054648008719F5 /* GMLMouseEvent.m in Sources */,
 				4E8603E61D0135B70032ABAD /* GMLLogCenter.swift in Sources */,
 				4E86034C1D000EC70032ABAD /* GameScene.swift in Sources */,
@@ -452,7 +464,9 @@
 				4E8603F41D015C950032ABAD /* GMLMain.swift in Sources */,
 				4E8604031D0179FB0032ABAD /* ioapi.c in Sources */,
 				4E0C8CDE1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */,
+				4E3305301D0905F200B2B9D3 /* GMLAniType.swift in Sources */,
 				4E8604091D0179FB0032ABAD /* zip.c in Sources */,
+				4E33052F1D0905AE00B2B9D3 /* MonsterAlignType.swift in Sources */,
 				4E8603F11D01594A0032ABAD /* GMLGameConfig.m in Sources */,
 				4E0C8CE11D07FDEF008719F5 /* GMLMonster.swift in Sources */,
 				4E86034A1D000EC70032ABAD /* AppDelegate.swift in Sources */,

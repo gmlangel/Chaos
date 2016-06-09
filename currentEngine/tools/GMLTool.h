@@ -19,4 +19,6 @@
  文档路径
  */
 +(NSString * __nonnull)documentPath;
+
++(CGPoint)randomPositionInRect:(CGPoint)cp radius:(CGFloat)_radius;
 @end

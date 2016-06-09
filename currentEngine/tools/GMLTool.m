@@ -35,4 +35,10 @@ return [SKTexture textureWithImage:[UIImage imageWithData:fileData]];
     NSArray * arr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSAllDomainsMask, true);
     return [arr objectAtIndex:0];
 }
+
++(CGPoint)randomPositionInRect:(CGPoint)cp radius:(CGFloat)_radius
+{
+    UInt32 len = (UInt32)(_radius * 2);
+    return CGPointMake((cp.x -_radius) + (CGFloat)(arc4random()%len), (cp.y -_radius) + (CGFloat)(arc4random()%len));
+}
 @end
