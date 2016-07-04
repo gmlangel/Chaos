@@ -13,12 +13,14 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        let chatV:ChatView = ChatView(frame: CGRect(x: self.view.frame.size.width - 50, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height));
+        self.view.addSubview(chatV);
         //启动游戏
         let arr = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true);
         GMLGameConfig.setLogPaths([arr[0]]);
         GMLGameConfig.setSourceScale(1.0/UIScreen.mainScreen().scale);
-        GMLMain.instance.start(self.view as! SKView);
+        GMLMain.instance.start(self.view as! SKView,_chatView: chatV);
     }
     
     

@@ -38,6 +38,7 @@ class PreloadScene: GMLScene {
         loadMaskMC.size.width = tsize.width;
         loadMaskMC.runAction(loadtoolAK, withKey: "loadingtiao");
         loadingNode.runAction(loadingAk, withKey: "renwuloading");
+        NSNotificationCenter.defaultCenter().postNotificationName("showOrHideChatView", object: false);
     }
     
     override func ginit() {

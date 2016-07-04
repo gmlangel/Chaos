@@ -14,6 +14,11 @@ class GMLMain:NSObject {
     private(set) var mainGameView:SKView!;
     
     
+    /**
+     聊天面板视图
+     */
+    private(set) var chatView:SKView!;
+    
     static var instance:GMLMain{
         get{
             struct gmlMainIns {
@@ -26,13 +31,16 @@ class GMLMain:NSObject {
     /**
      游戏开始
      */
-    func start(_mainView:SKView){
+    func start(_mainView:SKView,_chatView:SKView){
         //设置主视图
         mainGameView = _mainView;
         mainGameView.showsFPS = true;//显示fps
         mainGameView.showsNodeCount = true//显示当前屏幕中被渲染的节点数
         mainGameView.ignoresSiblingOrder = true;//启用外优化，增加渲染性能
         
+        //设置聊天视图
+        chatView = _chatView;
+        chatView.hidden = true;
         
         //启动log系统
         GMLLogCenter.instance.start();
@@ -43,6 +51,7 @@ class GMLMain:NSObject {
         GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets1/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: NSSelectorFromString("changeScene:"), name: "changeScene", object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: NSSelectorFromString("showOrHideChatView:"), name: "showOrHideChatView", object: nil);
     }
     
     /**
@@ -86,11 +95,28 @@ class GMLMain:NSObject {
                     NSThread.sleepForTimeInterval(1);
                     PreloadScene.instance.stopLoading();
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                        self.mainGameView.presentScene(goScene, transition: SKTransition.fadeWithDuration(1));
+                        self.mainGameView.presentScene(goScene);
+                        NSNotificationCenter.defaultCenter().postNotificationName("showOrHideChatView", object: true);
                     })
                 }
             })
             
+        }
+    }
+    
+    /**
+     显示或者隐藏chat层
+     */
+    func showOrHideChatView(notify:NSNotification)
+    {
+        let b = notify.object as! Bool;
+        if(b)
+        {
+            //显示chat
+            chatView.hidden = !b;
+        }else{
+            //隐藏chat
+            chatView.hidden = !b;
         }
     }
 }

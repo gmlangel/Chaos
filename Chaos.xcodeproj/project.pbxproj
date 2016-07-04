@@ -35,6 +35,8 @@
 		4E3305301D0905F200B2B9D3 /* GMLAniType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DB79B1D045A95003F7152 /* GMLAniType.swift */; };
 		4E3305321D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */; };
 		4E3305331D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */; };
+		4E3474231D18334C007D42D9 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3474221D18334C007D42D9 /* ChatView.swift */; };
+		4E3474251D183590007D42D9 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3474241D183590007D42D9 /* ChatView.swift */; };
 		4E7BF73D1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
 		4E7BF73E1D03F5930016FBA9 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */; };
 		4E86032D1D000E440032ABAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86032C1D000E440032ABAD /* AppDelegate.swift */; };
@@ -95,6 +97,8 @@
 		4E2DB79B1D045A95003F7152 /* GMLAniType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLAniType.swift; sourceTree = "<group>"; };
 		4E33052D1D0905AE00B2B9D3 /* MonsterAlignType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterAlignType.swift; sourceTree = "<group>"; };
 		4E3305311D0934EE00B2B9D3 /* GMLContactTestBitMaskEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLContactTestBitMaskEnum.swift; sourceTree = "<group>"; };
+		4E3474221D18334C007D42D9 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4E3474241D183590007D42D9 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		4E7BF73C1D03F5930016FBA9 /* HeartbeatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartbeatManager.swift; sourceTree = "<group>"; };
 		4E8603291D000E440032ABAD /* ChaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E86032C1D000E440032ABAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				4E8603371D000E440032ABAD /* Assets.xcassets */,
 				4E8603391D000E440032ABAD /* LaunchScreen.storyboard */,
 				4E86033C1D000E440032ABAD /* Info.plist */,
+				4E3474221D18334C007D42D9 /* ChatView.swift */,
 			);
 			name = ChaosIOS;
 			path = Chaos;
@@ -231,6 +236,7 @@
 				4E0C8CCD1D054DFF008719F5 /* scenesExten */,
 				4E8603491D000EC70032ABAD /* AppDelegate.swift */,
 				4E86034B1D000EC70032ABAD /* GameScene.swift */,
+				4E3474241D183590007D42D9 /* ChatView.swift */,
 				4E86034F1D000EC70032ABAD /* Assets.xcassets */,
 				4E8603511D000EC70032ABAD /* MainMenu.xib */,
 				4E8603541D000EC70032ABAD /* Info.plist */,
@@ -425,6 +431,7 @@
 				4E0C8CD11D055063008719F5 /* LoginSceneExten.swift in Sources */,
 				4E0C8CE31D08009B008719F5 /* GMLDynamicSceneFactory.swift in Sources */,
 				4E8604061D0179FB0032ABAD /* unzip.c in Sources */,
+				4E3474231D18334C007D42D9 /* ChatView.swift in Sources */,
 				4E33052E1D0905AE00B2B9D3 /* MonsterAlignType.swift in Sources */,
 				4E86040C1D017A050032ABAD /* ZipArchive.mm in Sources */,
 				4E0C8CD31D0587EC008719F5 /* SelectRoleScene.swift in Sources */,
@@ -464,6 +471,7 @@
 				4E8603F41D015C950032ABAD /* GMLMain.swift in Sources */,
 				4E8604031D0179FB0032ABAD /* ioapi.c in Sources */,
 				4E0C8CDE1D07FD82008719F5 /* GMLDynamicScene.swift in Sources */,
+				4E3474251D183590007D42D9 /* ChatView.swift in Sources */,
 				4E3305301D0905F200B2B9D3 /* GMLAniType.swift in Sources */,
 				4E8604091D0179FB0032ABAD /* zip.c in Sources */,
 				4E33052F1D0905AE00B2B9D3 /* MonsterAlignType.swift in Sources */,

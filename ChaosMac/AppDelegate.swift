@@ -48,13 +48,13 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
 //        config?.writeToFile(GMLTool.documentPath()+"/DiqiuScene2.plist", atomically: false);
 
         
-        
-        
+        let chatV = ChatView(frame: skView.frame);
+        self.skView.addSubview(chatV);
         //启动游戏
         let arr = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true);
         GMLGameConfig.setLogPaths([arr[0]]);
         GMLGameConfig.setSourceScale(1);
-        GMLMain.instance.start(self.skView);
+        GMLMain.instance.start(self.skView,_chatView: chatV);
         
         
     }
