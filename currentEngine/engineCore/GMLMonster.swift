@@ -74,89 +74,89 @@ class GMLMonster: SKSpriteNode {
         let keys = monsterConfig.allKeys as! [String];
         var frames:NSArray;
         var dic:NSDictionary;
-        monsterName=monsterConfig.valueForKey("name") as! String;
-        folderName=monsterConfig.valueForKey("folderName") as! String;
-        alignName=monsterConfig.valueForKey("align") as! String;
+        monsterName=monsterConfig.value(forKey: "name") as! String;
+        folderName=monsterConfig.value(forKey: "folderName") as! String;
+        alignName=monsterConfig.value(forKey: "align") as! String;
         for key:String in keys
         {
             switch key {
             case GMLAniType.DEFAULT.rawValue:
                 defaultFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    defaultFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    defaultFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.MOVE_LEFT.rawValue:
                 leftFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    leftFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    leftFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.TOP.rawValue:
                 topFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    topFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    topFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.BOTTOM.rawValue:
                 bottomFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    bottomFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    bottomFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.MOVE_RIGHT.rawValue:
                 rightFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    rightFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    rightFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.MOVE_TOP_RIGHT.rawValue:
                 topRightFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    topRightFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    topRightFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.MOVE_BOTTOM_RIGHT.rawValue:
                 bottomRightFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    bottomRightFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    bottomRightFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.MOVE_TOP_LEFT.rawValue:
                 topLeftFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    topLeftFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    topLeftFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             case GMLAniType.MOVE_BOTTOM_LEFT.rawValue:
                 bottomLeftFrames = [];
-                dic = monsterConfig.valueForKey(key) as! NSDictionary;
-                frames = dic.valueForKey("frames") as! NSArray;
+                dic = monsterConfig.value(forKey: key) as! NSDictionary;
+                frames = dic.value(forKey: "frames") as! NSArray;
                 for i:Int in 0..<frames.count {
-                    bottomLeftFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.objectAtIndex(i) as! String)));
+                    bottomLeftFrames.append(GMLResourceManager.instance.textureByName(folderName + "_" + (frames.object(at: i) as! String)));
                 }
                 break;
             default:break;
                 
             }
         }
-        super.init(texture: defaultFrames[0], color: SKColor.clearColor(), size: defaultFrames[0]!.size());
+        super.init(texture: defaultFrames[0], color: SKColor.clear, size: defaultFrames[0]!.size());
     }
     
     
@@ -174,7 +174,7 @@ class GMLMonster: SKSpriteNode {
         self.topFrames = sourceMonster.topFrames;
         self.topLeftFrames = sourceMonster.topLeftFrames;
         self.topRightFrames = sourceMonster.topRightFrames;
-        super.init(texture: defaultFrames[0], color: SKColor.clearColor(), size: defaultFrames[0]!.size());
+        super.init(texture: defaultFrames[0], color: SKColor.clear, size: defaultFrames[0]!.size());
 //        self.physicsBody = SKPhysicsBody(circleOfRadius: defaultFrames[0]!.size().width);
 //        self.physicsBody!.contactTestBitMask = GMLContactTestBitMaskEnum.Monster.rawValue;
 //        self.physicsBody?.affectedByGravity = false;
@@ -185,7 +185,7 @@ class GMLMonster: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func appendFolderName(str:String)->String{
+    func appendFolderName(_ str:String)->String{
         return folderName + str;
     }
     

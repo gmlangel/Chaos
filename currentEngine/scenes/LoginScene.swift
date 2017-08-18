@@ -13,26 +13,26 @@ class LoginScene: GMLScene {
     var btn_beginGame:SKSpriteNode!;
     
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view);
+    override func didMove(to view: SKView) {
+        super.didMove(to: view);
 
     }
     
     
     override func ginit() {
         super.ginit();
-        self.backgroundColor = SKColor.blackColor();
+        self.backgroundColor = SKColor.black;
         bgNode = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("loginScene_bg"))
         self.bgLayer.addChild(bgNode);
 
         
-        btn_beginGame = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 120, height: 30));
+        btn_beginGame = SKSpriteNode(color: SKColor.white, size: CGSize(width: 120, height: 30));
         let btn_beginGameLabel:SKLabelNode = SKLabelNode(text: "开始");
         btn_beginGameLabel.fontSize = 18;
         btn_beginGameLabel.fontName = "Chalkduster";
-        btn_beginGameLabel.fontColor = SKColor.redColor();
-        btn_beginGameLabel.verticalAlignmentMode = .Center;
-        btn_beginGameLabel.horizontalAlignmentMode = .Center;
+        btn_beginGameLabel.fontColor = SKColor.red;
+        btn_beginGameLabel.verticalAlignmentMode = .center;
+        btn_beginGameLabel.horizontalAlignmentMode = .center;
         btn_beginGame.addChild(btn_beginGameLabel);
         self.contextContainerLayer.addChild(btn_beginGame);
 
@@ -42,11 +42,11 @@ class LoginScene: GMLScene {
     
     
     
-    override func gresize(currentSize: CGSize) {
+    override func gresize(_ currentSize: CGSize) {
         let tempScale = autoScreen(1);
-        bgNode.position.x = CGRectGetMidX(self.frame) / tempScale;
-        bgNode.position.y = CGRectGetMidY(self.frame) / tempScale;
+        bgNode.position.x = self.frame.midX / tempScale;
+        bgNode.position.y = self.frame.midY / tempScale;
         btn_beginGame.position.x = bgNode.position.x;
-        btn_beginGame.position.y = CGRectGetMidY(self.frame) / 2 / tempScale;
+        btn_beginGame.position.y = self.frame.midY / 2 / tempScale;
     }
 }

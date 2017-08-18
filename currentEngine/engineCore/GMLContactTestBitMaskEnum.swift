@@ -8,5 +8,5 @@
 
 import Foundation
 enum GMLContactTestBitMaskEnum:UInt32 {
-    case Monster = 13
+    case monster = 13
 }

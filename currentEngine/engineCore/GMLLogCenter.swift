@@ -11,10 +11,10 @@ class GMLLogCenter:NSObject {
     /**
      程序运行打点数据的日志路径
      */
-    private var runningLogPath:String!;
-    private var runningFileHandler:NSFileHandle?;
-    private var dateFormat:NSDateFormatter!;
-    private var fileNameDateFormat:NSDateFormatter!;
+    fileprivate var runningLogPath:String!;
+    fileprivate var runningFileHandler:FileHandle?;
+    fileprivate var dateFormat:DateFormatter!;
+    fileprivate var fileNameDateFormat:DateFormatter!;
     static var instance:GMLLogCenter{
         get{
             struct gmllgoIns {
@@ -32,20 +32,20 @@ class GMLLogCenter:NSObject {
      */
     func start()
     {
-        dateFormat = NSDateFormatter()
+        dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS";
         
-        fileNameDateFormat = NSDateFormatter();
+        fileNameDateFormat = DateFormatter();
         fileNameDateFormat.dateFormat = "yyyy-MM-dd_HH_mm_ss";
-        runningLogPath = String(format:"%@/game_current%@.log",GMLGameConfig.logPaths()[0],fileNameDateFormat.stringFromDate(NSDate()));
+        runningLogPath = String(format:"%@/game_current%@.log",GMLGameConfig.logPaths()[0],fileNameDateFormat.string(from: Date()));
 
         
-        if(!NSFileManager.defaultManager().fileExistsAtPath(runningLogPath))
+        if(!FileManager.default.fileExists(atPath: runningLogPath))
         {
             //如果日志不存在，则手动创建日志
             do{
-                try "".writeToFile(runningLogPath, atomically: true, encoding: NSUTF8StringEncoding);
-                runningFileHandler = NSFileHandle(forUpdatingAtPath: runningLogPath);
+                try "".write(toFile: runningLogPath, atomically: true, encoding: String.Encoding.utf8);
+                runningFileHandler = FileHandle(forUpdatingAtPath: runningLogPath);
             }catch{
                 NSLog("创建日志路径失败:\(runningLogPath)");
             }
@@ -56,7 +56,7 @@ class GMLLogCenter:NSObject {
     /**
      输出日志(Debug模式)
      */
-    func trace(msg:String?,_needTrace:Bool = true,_needWriteToFile:Bool = true){
+    func trace(_ msg:String?,_needTrace:Bool = true,_needWriteToFile:Bool = true){
         if(msg == nil)
         {
             return ;
@@ -69,16 +69,16 @@ class GMLLogCenter:NSObject {
         if(_needWriteToFile)
         {
             runningFileHandler?.seekToEndOfFile();
-            runningFileHandler?.writeData(msgAppendDateTime("\(msg!)\n").dataUsingEncoding(NSUTF8StringEncoding)!);
+            runningFileHandler?.write(msgAppendDateTime("\(msg!)\n").data(using: String.Encoding.utf8)!);
         }
     }
     
     /**
      追加日志时间
      */
-    private func msgAppendDateTime(msg:String)->String
+    fileprivate func msgAppendDateTime(_ msg:String)->String
     {
-        return String(format: "[%@]%@", dateFormat.stringFromDate(NSDate()),msg);
+        return String(format: "[%@]%@", dateFormat.string(from: Date()),msg);
     }
     
 //    

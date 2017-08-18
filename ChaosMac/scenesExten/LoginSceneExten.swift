@@ -19,12 +19,12 @@ class LoginSceneExten: LoginScene {
         }
     }
     
-    override func mouseDown(theEvent: NSEvent) {
-        let p = theEvent.locationInNode(self.contextContainerLayer);
+    override func mouseDown(with theEvent: NSEvent) {
+        let p = theEvent.location(in: self.contextContainerLayer);
         if(btn_beginGame.frame.contains(p))
         {
             GMLLogCenter.instance.trace("登陆");
-            NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "SelectRoleScene");
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "changeScene"), object: "SelectRoleScene");
         }
     }
 }

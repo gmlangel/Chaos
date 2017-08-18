@@ -11,19 +11,19 @@ import SpriteKit
 class PreloadScene: GMLScene {
     
     //循环动画的资源
-    private var textues:[SKTexture]!;//loading人物的资源
-    private var loadtool:SKSpriteNode!;//loading条
-    private var loadMaskMC:SKSpriteNode!;
-    private var loadtoolAK:SKAction!;//loading条动画
+    fileprivate var textues:[SKTexture]!;//loading人物的资源
+    fileprivate var loadtool:SKSpriteNode!;//loading条
+    fileprivate var loadMaskMC:SKSpriteNode!;
+    fileprivate var loadtoolAK:SKAction!;//loading条动画
     
-    private var loadingNode:SKSpriteNode!;//loading人物
-    private var loadingAk:SKAction!;
-    private var loadingInterval:Double = 1/12;//loading动画的间隔
-    private var tsize:CGSize!;
-    var loadingTime:NSTimeInterval! = 5;//loading动画的完整执行时间
+    fileprivate var loadingNode:SKSpriteNode!;//loading人物
+    fileprivate var loadingAk:SKAction!;
+    fileprivate var loadingInterval:Double = 1/12;//loading动画的间隔
+    fileprivate var tsize:CGSize!;
+    var loadingTime:TimeInterval! = 5;//loading动画的完整执行时间
     
-    private var stopAc:SKAction!;
-    private var wanttogoSceneName:String!;//将要去的下一个场景
+    fileprivate var stopAc:SKAction!;
+    fileprivate var wanttogoSceneName:String!;//将要去的下一个场景
     static var instance:PreloadScene{
         get{
             struct PreloadSceneIns{
@@ -33,17 +33,17 @@ class PreloadScene: GMLScene {
         }
     }
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view);
+    override func didMove(to view: SKView) {
+        super.didMove(to: view);
         loadMaskMC.size.width = tsize.width;
-        loadMaskMC.runAction(loadtoolAK, withKey: "loadingtiao");
-        loadingNode.runAction(loadingAk, withKey: "renwuloading");
-        NSNotificationCenter.defaultCenter().postNotificationName("showOrHideChatView", object: false);
+        loadMaskMC.run(loadtoolAK, withKey: "loadingtiao");
+        loadingNode.run(loadingAk, withKey: "renwuloading");
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "showOrHideChatView"), object: false);
     }
     
     override func ginit() {
         super.ginit();
-        self.backgroundColor = SKColor.blackColor();
+        self.backgroundColor = SKColor.black;
         textues = [];
         for i:Int in 0..<4
         {
@@ -53,11 +53,11 @@ class PreloadScene: GMLScene {
         loadtool = SKSpriteNode();
         tsize = CGSize(width:(self.frame.size.width - 80)/self.contextContainerLayer.xScale,height:20);
         let loadbg = SKShapeNode(rect: CGRect(x:-tsize.width/2,y:-tsize.height/2,width:tsize.width,height:tsize.height), cornerRadius: 10)
-        loadbg.fillColor = SKColor.blueColor();
+        loadbg.fillColor = SKColor.blue;
         loadbg.lineWidth = 0;
         loadtool.addChild(loadbg);
         
-        loadMaskMC = SKSpriteNode(color: SKColor.blackColor(), size: tsize);
+        loadMaskMC = SKSpriteNode(color: SKColor.black, size: tsize);
         loadMaskMC.anchorPoint.x = 1;
         loadMaskMC.position.x = tsize.width/2;
         loadtool.addChild(loadMaskMC);
@@ -68,15 +68,15 @@ class PreloadScene: GMLScene {
         self.contextContainerLayer.addChild(loadingNode);
         
         //loading动作
-        loadingAk = SKAction.repeatActionForever(SKAction.animateWithTextures(textues, timePerFrame: loadingInterval,resize: true,restore: true));
+        loadingAk = SKAction.repeatForever(SKAction.animate(with: textues, timePerFrame: loadingInterval,resize: true,restore: true));
         
-        loadtoolAK = SKAction.resizeToWidth(0, duration: loadingTime);
+        loadtoolAK = SKAction.resize(toWidth: 0, duration: loadingTime);
         loadtoolAK.timingFunction = onloadtoolAKFuncUpdaet;
         
-        stopAc = SKAction.sequence([SKAction.waitForDuration(1),SKAction.performSelector(NSSelectorFromString("onstopAni"), onTarget: self)]);
+        stopAc = SKAction.sequence([SKAction.wait(forDuration: 1),SKAction.perform(NSSelectorFromString("onstopAni"), onTarget: self)]);
     }
     
-    func onloadtoolAKFuncUpdaet(a:Float)->Float
+    func onloadtoolAKFuncUpdaet(_ a:Float)->Float
     {
         loadingNode.position.x = loadMaskMC.position.x - loadMaskMC.size.width + loadtool.position.x;
         return a;
@@ -85,12 +85,12 @@ class PreloadScene: GMLScene {
     /**
      停止加载动画
      */
-    func stopLoading(_wanttogoSceneName:String = ""){
+    func stopLoading(_ _wanttogoSceneName:String = ""){
         self.wanttogoSceneName = _wanttogoSceneName;
         loadMaskMC.removeAllActions();
         loadMaskMC.size.width = 0;
         loadingNode.position.x = loadMaskMC.position.x - loadMaskMC.size.width + loadtool.position.x;
-        self.runAction(stopAc, withKey: "stopAc")
+        self.run(stopAc, withKey: "stopAc")
     }
     
     func onstopAni(){
@@ -98,16 +98,16 @@ class PreloadScene: GMLScene {
         //如果wanttogoSceneName不为空字符串，则跳转至指定的场景
         if(wanttogoSceneName != "")
         {
-            NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: wanttogoSceneName);
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "changeScene"), object: wanttogoSceneName);
         }
     }
     
-    override func willMoveFromView(view: SKView) {
+    override func willMove(from view: SKView) {
         loadingNode.removeAllActions();
         self.removeAllActions();
     }
     
-    override func gresize(currentSize: CGSize) {
+    override func gresize(_ currentSize: CGSize) {
         loadtool.position.x = self.size.width / self.contextContainerLayer.xScale / 2;
         loadingNode.position.y = self.size.height / self.contextContainerLayer.yScale / 2;
         loadtool.position.y = loadingNode.position.y - loadingNode.size.height / 2 - 40;

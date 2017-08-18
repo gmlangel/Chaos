@@ -360,6 +360,7 @@
 					};
 					4E8603461D000EC70032ABAD = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -638,6 +639,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -654,6 +656,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

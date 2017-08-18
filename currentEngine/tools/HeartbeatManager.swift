@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class HeartbeatManager: NSObject {
+open class HeartbeatManager: NSObject {
     
-    private var taskArr:NSMutableDictionary;
-    public class var instance:HeartbeatManager{
+    fileprivate var taskArr:NSMutableDictionary;
+    open class var instance:HeartbeatManager{
         get{
             struct HeartbeatIns {
                 static var _ins:HeartbeatManager = HeartbeatManager();
@@ -25,9 +25,9 @@ public class HeartbeatManager: NSObject {
         super.init();
     }
     
-    public func hasTask(taskName:String)->Bool
+    open func hasTask(_ taskName:String)->Bool
     {
-        return taskArr.valueForKey(taskName) != nil;
+        return taskArr.value(forKey: taskName) != nil;
     }
     
     /**
@@ -38,38 +38,38 @@ public class HeartbeatManager: NSObject {
     taskName 绑定名称
     repeats 是否循环执行
     */
-    public func addTask(sel:Selector,ti:NSTimeInterval,tg:AnyObject,taskName:String,repeats:Bool = true)
+    open func addTask(_ sel:Selector,ti:TimeInterval,tg:AnyObject,taskName:String,repeats:Bool = true)
     {
-        let nt:NSTimer = NSTimer.scheduledTimerWithTimeInterval(ti, target: tg, selector: sel, userInfo: nil, repeats: repeats);
-        taskArr.setObject(nt, forKey: taskName);
+        let nt:Timer = Timer.scheduledTimer(timeInterval: ti, target: tg, selector: sel, userInfo: nil, repeats: repeats);
+        taskArr.setObject(nt, forKey: taskName as NSCopying);
     }
     
     /**
     删除绑定的任务
     */
-    public func removeTask(taskName:String)
+    open func removeTask(_ taskName:String)
     {
         if(hasTask(taskName) == false)
         {
             return;
         }
-        let nt:NSTimer = taskArr.objectForKey(taskName)as! NSTimer;
+        let nt:Timer = taskArr.object(forKey: taskName)as! Timer;
         nt.invalidate();
-        taskArr.removeObjectForKey(taskName);
+        taskArr.removeObject(forKey: taskName);
     }
     
     /**
     移除所有任务
     */
-    public func removeAllTask()
+    open func removeAllTask()
     {
         var arr:Array = taskArr.allKeys;
-        var nt:NSTimer;
+        var nt:Timer;
         for i:Int in 0..<arr.count
         {
-            nt = taskArr.objectForKey(arr[i]) as! NSTimer;
+            nt = taskArr.object(forKey: arr[i]) as! Timer;
             nt.invalidate();
-            taskArr.removeObjectForKey(arr[i]);
+            taskArr.removeObject(forKey: arr[i]);
         }
     }
     

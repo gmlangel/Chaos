@@ -9,21 +9,21 @@
 import Foundation
 import SpriteKit
 class GMLDynamicScene: GMLScene {
-    private(set) var bgs:[SKSpriteNode]?;//所有的背景
-    private(set) var mounsters:[GMLMonster]?;//所有的怪物
-    private(set) var monsterFenbu:NSArray?;//怪物分布
+    fileprivate(set) var bgs:[SKSpriteNode]?;//所有的背景
+    fileprivate(set) var mounsters:[GMLMonster]?;//所有的怪物
+    fileprivate(set) var monsterFenbu:NSArray?;//怪物分布
     
     var currentScenePosition:CGPoint!;
     
     /**
      内容尺寸
      */
-    private var contextSize:CGSize!;
+    fileprivate var contextSize:CGSize!;
     
     /**
      资源文件夹名称
      */
-    private var folderName:String!;
+    fileprivate var folderName:String!;
     /**
      使用配置文件初始化场景
      */
@@ -32,36 +32,36 @@ class GMLDynamicScene: GMLScene {
         super.init(size: GMLMain.instance.mainGameView.frame.size);
         
         //设置资源文件夹名称
-        folderName = sceneConfig.valueForKey("folderName") as! String;
+        folderName = sceneConfig.value(forKey: "folderName") as! String;
         //将图像位移到指定的入口坐标
-        var dic = sceneConfig.valueForKey("enterPoint") as! NSDictionary;
-        currentScenePosition = CGPoint(x: autoScreen(CGFloat(dic.valueForKey("x") as! NSNumber)), y: autoScreen(CGFloat(dic.valueForKey("y") as! NSNumber)))
+        var dic = sceneConfig.value(forKey: "enterPoint") as! NSDictionary;
+        currentScenePosition = CGPoint(x: autoScreen(CGFloat(dic.value(forKey: "x") as! NSNumber)), y: autoScreen(CGFloat(dic.value(forKey: "y") as! NSNumber)))
         self.anchorPoint = CGPoint(x: -currentScenePosition.x/self.size.width, y: -currentScenePosition.y/self.size.height);
         
         
         
-        dic = sceneConfig.valueForKey("contextSize") as! NSDictionary;
+        dic = sceneConfig.value(forKey: "contextSize") as! NSDictionary;
         
         //设置scene中呈现的内容尺寸
-        contextSize = CGSize(width: autoScreen(CGFloat(dic.valueForKey("width") as! NSNumber)), height: autoScreen(CGFloat(dic.valueForKey("height") as! NSNumber)));
+        contextSize = CGSize(width: autoScreen(CGFloat(dic.value(forKey: "width") as! NSNumber)), height: autoScreen(CGFloat(dic.value(forKey: "height") as! NSNumber)));
         
-        if let bginfo = sceneConfig.valueForKey("bg") as? NSArray{
+        if let bginfo = sceneConfig.value(forKey: "bg") as? NSArray{
             let j = bginfo.count;
             var textureName:String;
             var obj:NSDictionary;
             bgs = [];
             for i:Int in 0..<j
             {
-                obj = bginfo.objectAtIndex(i) as! NSDictionary;
-                textureName = folderName + "_" + (obj.valueForKey("name") as! String);
+                //obj = bginfo.object(at: i) as! NSDictionary;
+                textureName = folderName + "_" + (bginfo.object(at: i) as! String);
                 let bgNode = SKSpriteNode(texture: GMLResourceManager.instance.textureByName(textureName));
                 bgs!.append(bgNode);
-                bgNode.position = CGPoint(x: CGFloat(obj.valueForKey("x")! as! NSNumber), y: CGFloat(obj.valueForKey("y")! as! NSNumber));
+                bgNode.position = CGPoint(x: CGFloat(256), y: CGFloat(256));
             }
         }
         
         //读取怪物分布
-        monsterFenbu = sceneConfig.valueForKey("monsterFenbu") as? NSArray;
+        monsterFenbu = sceneConfig.value(forKey: "monsterFenbu") as? NSArray;
         if(monsterFenbu != nil)
         {
             mounsters = [];
@@ -80,20 +80,20 @@ class GMLDynamicScene: GMLScene {
     /**
      根据怪物分布信息填充Monsters集合
      */
-    private func pushMonsters(obj:NSDictionary)
+    fileprivate func pushMonsters(_ obj:NSDictionary)
     {
-        let monsterConfigName = obj.valueForKey("monsterKey") as! String;
+        let monsterConfigName = obj.value(forKey: "monsterKey") as! String;
         if let dic = GMLResourceManager.instance.configByName(monsterConfigName){
             let monster:GMLMonster = GMLMonster(monsterConfig: dic);
-            let centerPos:CGPoint = CGPoint(x: CGFloat(obj.valueForKey("x") as! NSNumber), y: CGFloat(obj.valueForKey("y") as! NSNumber));
-            let radius:CGFloat = CGFloat(obj.valueForKey("radius") as! NSNumber);
+            let centerPos:CGPoint = CGPoint(x: CGFloat(obj.value(forKey: "x") as! NSNumber), y: CGFloat(obj.value(forKey: "y") as! NSNumber));
+            let radius:CGFloat = CGFloat(obj.value(forKey: "radius") as! NSNumber);
             mounsters!.append(monster);
-            monster.position = GMLTool.randomPositionInRect(centerPos,radius:radius);
-            let j:Int = Int(obj.valueForKey("count") as! NSNumber);//读取要创建的个数
+            monster.position = GMLTool.randomPosition(inRect: centerPos,radius:radius);
+            let j:Int = Int(obj.value(forKey: "count") as! NSNumber);//读取要创建的个数
             for  i:Int in 1..<j {
                 let mo = monster.gClone();
                 mounsters!.append(mo);
-                mo.position = GMLTool.randomPositionInRect(centerPos,radius:radius);
+                mo.position = GMLTool.randomPosition(inRect: centerPos,radius:radius);
             }
         }else{
             GMLLogCenter.instance.trace("[pushMonsters]未能加载怪物:"+monsterConfigName)
@@ -101,15 +101,15 @@ class GMLDynamicScene: GMLScene {
         
     }
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view);
+    override func didMove(to view: SKView) {
+        super.didMove(to: view);
     }
     
     override func ginit() {
         super.ginit();
-        self.backgroundColor = SKColor.redColor();
+        self.backgroundColor = SKColor.red;
         //设置contextContainerLayer的区域范围
-        self.contextContainerLayer.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: 0, y: 0, width: contextSize.width/self.contextContainerLayer.xScale, height: contextSize.height/self.contextContainerLayer.yScale));
+        self.contextContainerLayer.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: 0, y: 0, width: contextSize.width/self.contextContainerLayer.xScale, height: contextSize.height/self.contextContainerLayer.yScale));
         
         if(bgs != nil)
         {
@@ -131,7 +131,7 @@ class GMLDynamicScene: GMLScene {
 
     }
     
-    override func gresize(currentSize: CGSize) {
+    override func gresize(_ currentSize: CGSize) {
         self.anchorPoint = CGPoint(x: -currentScenePosition.x/self.size.width, y: -currentScenePosition.y/self.size.height);//在缩放屏幕时，防止场景位置跑偏
     }
 

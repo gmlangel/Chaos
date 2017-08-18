@@ -10,8 +10,8 @@ import Foundation
 import SpriteKit
 class LogoScene: GMLScene {
     
-    private var mainLogo:SKSpriteNode!;
-    private var logoAction:SKAction!;
+    fileprivate var mainLogo:SKSpriteNode!;
+    fileprivate var logoAction:SKAction!;
     var isAniEnd:Bool! = false;
     static var instance:LogoScene{
         get{
@@ -22,23 +22,23 @@ class LogoScene: GMLScene {
         }
     }
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
         isAniEnd = false;
-        mainLogo.removeActionForKey("chuchang");
-        mainLogo.runAction(logoAction, withKey: "chuchang")
+        mainLogo.removeAction(forKey: "chuchang");
+        mainLogo.run(logoAction, withKey: "chuchang")
     }
     
     override func ginit() {
         super.ginit();
-        self.backgroundColor = SKColor.whiteColor();
+        self.backgroundColor = SKColor.white;
         mainLogo = SKSpriteNode(imageNamed: "MainAssets1/logo/mainLog");
         mainLogo.alpha = 0;
-        mainLogo.normalTexture = mainLogo.texture?.textureByGeneratingNormalMap();
+        mainLogo.normalTexture = mainLogo.texture?.generatingNormalMap();
         self.bgLayer.addChild(mainLogo);
         
         
-        logoAction = SKAction.sequence([SKAction.performSelector(NSSelectorFromString("logoReset"), onTarget: self),SKAction.waitForDuration(0.5),SKAction.group([SKAction.fadeInWithDuration(0.3),SKAction.scaleTo(1, duration: 0.5)]),SKAction.waitForDuration(1),SKAction.performSelector(NSSelectorFromString("aniEnd"), onTarget: self)]);
+        logoAction = SKAction.sequence([SKAction.perform(NSSelectorFromString("logoReset"), onTarget: self),SKAction.wait(forDuration: 0.5),SKAction.group([SKAction.fadeIn(withDuration: 0.3),SKAction.scale(to: 1, duration: 0.5)]),SKAction.wait(forDuration: 1),SKAction.perform(NSSelectorFromString("aniEnd"), onTarget: self)]);
         
         
     }
@@ -58,18 +58,18 @@ class LogoScene: GMLScene {
     func aniEnd()
     {
         isAniEnd = true;
-        NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "PrelaodScene");
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "changeScene"), object: "PrelaodScene");
     }
     
     
-    override func update(currentTime: NSTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         //NSLog("\(self.frame)");
         
         
     }
     
-    override func gresize(currentSize: CGSize) {
-        mainLogo.position.x = CGRectGetMidX(self.frame)/self.bgLayer.xScale;
-        mainLogo.position.y = CGRectGetMidY(self.frame)/self.bgLayer.yScale;
+    override func gresize(_ currentSize: CGSize) {
+        mainLogo.position.x = self.frame.midX/self.bgLayer.xScale;
+        mainLogo.position.y = self.frame.midY/self.bgLayer.yScale;
     }
 }

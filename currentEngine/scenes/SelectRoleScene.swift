@@ -10,21 +10,21 @@ import Foundation
 import SpriteKit
 class SelectRoleScene: GMLScene {
     var roleListPanel:SKSpriteNode!;
-    private var roleSelectBg:SKSpriteNode!;
+    fileprivate var roleSelectBg:SKSpriteNode!;
     var btn_in:SKSpriteNode!;
     var btn_out:SKSpriteNode!;
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view);
+    override func didMove(to view: SKView) {
+        super.didMove(to: view);
         
     }
     
     override func ginit() {
         super.ginit();
-        self.backgroundColor = SKColor.blackColor();
+        self.backgroundColor = SKColor.black;
         
-        roleSelectBg = SKSpriteNode(color: SKColor.redColor(), size: CGSize(width: 150, height: 200));
+        roleSelectBg = SKSpriteNode(color: SKColor.red, size: CGSize(width: 150, height: 200));
         
-        roleListPanel = SKSpriteNode(color: SKColor.blueColor(), size: CGSize(width: roleSelectBg.size.width * 4, height: roleSelectBg.size.height * 2));
+        roleListPanel = SKSpriteNode(color: SKColor.blue, size: CGSize(width: roleSelectBg.size.width * 4, height: roleSelectBg.size.height * 2));
         roleListPanel.addChild(roleSelectBg);
         roleListPanel.anchorPoint = CGPoint(x: 0, y: 0);
         self.contextContainerLayer.addChild(roleListPanel);
@@ -63,20 +63,20 @@ class SelectRoleScene: GMLScene {
         
     }
     
-    private func createBtn(text:String)->SKSpriteNode
+    fileprivate func createBtn(_ text:String)->SKSpriteNode
     {
-        let node = SKSpriteNode(color: SKColor.redColor(), size: CGSize(width: 100, height: 30));
+        let node = SKSpriteNode(color: SKColor.red, size: CGSize(width: 100, height: 30));
         let lab = SKLabelNode(text: text);
         lab.fontSize = 18;
         lab.fontName = "Chalkduster";
-        lab.fontColor = SKColor.whiteColor();
-        lab.horizontalAlignmentMode = .Center;
-        lab.verticalAlignmentMode = .Center;
+        lab.fontColor = SKColor.white;
+        lab.horizontalAlignmentMode = .center;
+        lab.verticalAlignmentMode = .center;
         node.addChild(lab)
         return node;
     }
     
-    override func gresize(currentSize: CGSize) {
+    override func gresize(_ currentSize: CGSize) {
         let tempScale = autoScreen(1);
         roleListPanel.position.x = (self.frame.size.width/tempScale -  roleListPanel.frame.size.width)/2;
         roleListPanel.position.y = (self.frame.size.height/tempScale -  roleListPanel.frame.size.height)/2;
@@ -95,7 +95,7 @@ class SelectRoleScene: GMLScene {
         /**
         进入场景
         */
-        NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "DiqiuScene");
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "changeScene"), object: "DiqiuScene");
     }
     
     /**
@@ -103,16 +103,16 @@ class SelectRoleScene: GMLScene {
      */
     func onBtn_outClick()
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "mainGameView")
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "changeScene"), object: "mainGameView")
     }
     
     /**
      当选中了一个角色
      */
-    func selectRoleNode(roleNode:SKNode)
+    func selectRoleNode(_ roleNode:SKNode)
     {
-        roleSelectBg.runAction(SKAction.moveTo(roleNode.position, duration: 0.3)) {
+        roleSelectBg.run(SKAction.move(to: roleNode.position, duration: 0.3), completion: {
             self.roleSelectBg.removeAllActions();
-        }
+        }) 
     }
 }

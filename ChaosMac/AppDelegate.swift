@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
     let zipTool = ZipArchive();
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         /* Pick a size for the scene */
         
         //写scene mapbg消息
@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
         let chatV = ChatView(frame: skView.frame);
         self.skView.addSubview(chatV);
         //启动游戏
-        let arr = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true);
+        let arr = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true);
         GMLGameConfig.setLogPaths([arr[0]]);
         GMLGameConfig.setSourceScale(1);
         GMLMain.instance.start(self.skView,_chatView: chatV);
@@ -62,7 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ZipArchiveDelegate {
     
     
     
-    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
 }

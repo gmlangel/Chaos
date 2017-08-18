@@ -17,8 +17,8 @@ class SelectRoleSceneExten: SelectRoleScene {
             return SelectRoleSceneExtenExtenIns._ins;
         }
     }
-    override func mouseDown(theEvent: NSEvent) {
-        var p = theEvent.locationInNode(self.contextContainerLayer);
+    override func mouseDown(with theEvent: NSEvent) {
+        var p = theEvent.location(in: self.contextContainerLayer);
         if(self.btn_in.frame.contains(p))
         {
             self.onBtn_inClick();
@@ -28,9 +28,9 @@ class SelectRoleSceneExten: SelectRoleScene {
         }
         
         
-        p = theEvent.locationInNode(self.roleListPanel);
-        self.roleListPanel.enumerateChildNodesWithName("role_[0-\(self.roleListPanel.children.count)]") { (sn, nm) in
-            if(sn.containsPoint(p))
+        p = theEvent.location(in: self.roleListPanel);
+        self.roleListPanel.enumerateChildNodes(withName: "role_[0-\(self.roleListPanel.children.count)]") { (sn, nm) in
+            if(sn.contains(p))
             {
                 self.selectRoleNode(sn);
             }

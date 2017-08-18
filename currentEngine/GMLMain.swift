@@ -11,13 +11,13 @@ class GMLMain:NSObject {
     /**
      主游戏视图,唯一
      */
-    private(set) var mainGameView:SKView!;
+    fileprivate(set) var mainGameView:SKView!;
     
     
     /**
      聊天面板视图
      */
-    private(set) var chatView:SKView!;
+    fileprivate(set) var chatView:SKView!;
     
     static var instance:GMLMain{
         get{
@@ -31,7 +31,7 @@ class GMLMain:NSObject {
     /**
      游戏开始
      */
-    func start(_mainView:SKView,_chatView:SKView){
+    func start(_ _mainView:SKView,_chatView:SKView){
         //设置主视图
         mainGameView = _mainView;
         mainGameView.showsFPS = true;//显示fps
@@ -40,7 +40,7 @@ class GMLMain:NSObject {
         
         //设置聊天视图
         chatView = _chatView;
-        chatView.hidden = true;
+        chatView.isHidden = true;
         
         //启动log系统
         GMLLogCenter.instance.start();
@@ -50,8 +50,8 @@ class GMLMain:NSObject {
         mainGameView.presentScene(LogoScene.instance);
         GMLResourceManager.instance.loadResourcePick("main", resourcePath: "/MainAssets1/main",completeSelector: NSSelectorFromString("onMainSorceLoadEnd"),completeSelectorTarget: self);
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: NSSelectorFromString("changeScene:"), name: "changeScene", object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: NSSelectorFromString("showOrHideChatView:"), name: "showOrHideChatView", object: nil);
+        NotificationCenter.default.addObserver(self, selector: NSSelectorFromString("changeScene:"), name: NSNotification.Name(rawValue: "changeScene"), object: nil);
+        NotificationCenter.default.addObserver(self, selector: NSSelectorFromString("showOrHideChatView:"), name: NSNotification.Name(rawValue: "showOrHideChatView"), object: nil);
     }
     
     /**
@@ -72,31 +72,31 @@ class GMLMain:NSObject {
         }
     }
     
-    func changeScene(notify:NSNotification)
+    func changeScene(_ notify:Notification)
     {
         let sceneName = notify.object as! String;
         if("PrelaodScene" == sceneName)
         {
-            mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fadeWithDuration(1));
+            mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fade(withDuration: 1));
         }else if("SelectRoleScene" == sceneName)
         {
-            mainGameView.presentScene(SelectRoleSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
+            mainGameView.presentScene(SelectRoleSceneExten.instance, transition: SKTransition.fade(withDuration: 1));
         }else if("mainGameView" == sceneName)
         {
-            mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fadeWithDuration(1));
+            mainGameView.presentScene(LoginSceneExten.instance, transition: SKTransition.fade(withDuration: 1));
         }else{
             //显示预加载
-            mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fadeWithDuration(1));
+            mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fade(withDuration: 1));
             //开启一个异步线程，构建即将呈现的场景
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+            DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { 
                 if let config = GMLResourceManager.instance.configByName(sceneName){
                     let goScene = GMLDynamicScene(sceneConfig:config);
                     goScene.name = sceneName;
-                    NSThread.sleepForTimeInterval(1);
+                    Thread.sleep(forTimeInterval: 1);
                     PreloadScene.instance.stopLoading();
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                         self.mainGameView.presentScene(goScene);
-                        NSNotificationCenter.defaultCenter().postNotificationName("showOrHideChatView", object: true);
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "showOrHideChatView"), object: true);
                     })
                 }
             })
@@ -107,16 +107,17 @@ class GMLMain:NSObject {
     /**
      显示或者隐藏chat层
      */
-    func showOrHideChatView(notify:NSNotification)
+    func showOrHideChatView(_ notify:Notification)
     {
+        return;
         let b = notify.object as! Bool;
         if(b)
         {
             //显示chat
-            chatView.hidden = !b;
+            chatView.isHidden = !b;
         }else{
             //隐藏chat
-            chatView.hidden = !b;
+            chatView.isHidden = !b;
         }
     }
 }

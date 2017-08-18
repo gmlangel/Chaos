@@ -22,10 +22,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
+         contextName = "ChatView.init(frame : CGRect) -&gt; ChatView:ChatView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "buffer">
+               value = "self.layer.sublayers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -46,22 +46,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GMLResourceManager.(loadResource in _A465C4AC5CE1BAF1C5D27E7A1E1E6308)() -&gt; ():GMLResourceManager.swift">
+         contextName = "-[ZipArchive UnzipFileTo:overWrite:]:ZipArchive.mm">
          <PersistentStrings>
             <PersistentString
-               value = "waitLoad">
-            </PersistentString>
-            <PersistentString
-               value = "currentResourceKey">
-            </PersistentString>
-            <PersistentString
-               value = "resourceConfitDic">
-            </PersistentString>
-            <PersistentString
-               value = "resourceDataDic">
-            </PersistentString>
-            <PersistentString
-               value = "resourceTable">
+               value = "buffer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -90,18 +78,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChatView.init(frame : CGRect) -&gt; ChatView:ChatView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.layer.sublayers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GMLResourceManager.loadResourcePick(String, resourcePath : String) -&gt; ():GMLResourceManager.swift">
+         contextName = "GMLResourceManager.(loadResource in _A465C4AC5CE1BAF1C5D27E7A1E1E6308)() -&gt; ():GMLResourceManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "waitLoad">
+            </PersistentString>
+            <PersistentString
+               value = "currentResourceKey">
+            </PersistentString>
+            <PersistentString
+               value = "resourceConfitDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceDataDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceTable">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -113,6 +105,14 @@
             </PersistentString>
             <PersistentString
                value = "GMLGameConfig.sourceScale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.resourceConfitDic">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -144,10 +144,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GMLResourceManager.(UnzipFileAsyncComplete(NSMutableDictionary!) -&gt; ()).(closure #1):GMLResourceManager.swift">
+         contextName = "GMLResourceManager.loadResourcePick(String, resourcePath : String) -&gt; ():GMLResourceManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.resourceConfitDic">
+               value = "waitLoad">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -158,10 +158,10 @@
                value = "resourceConfitDic">
             </PersistentString>
             <PersistentString
-               value = "resourceDataDic">
+               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
             </PersistentString>
             <PersistentString
-               value = "NSFileManager.defaultManager().fileExistsAtPath(filePath)">
+               value = "resourceDataDic">
             </PersistentString>
             <PersistentString
                value = "resourceTable">
@@ -184,6 +184,17 @@
       </ContextState>
       <ContextState
          contextName = "AppDelegate.applicationDidFinishLaunching(NSNotification) -&gt; ():AppDelegate.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GMLResourceManager.textureByName(String) -&gt; SKTexture?:GMLResourceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textureDic">
+            </PersistentString>
+            <PersistentString
+               value = "resourceDataDic">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LogoScene.didChangeSize(CGSize) -&gt; ():LogoScene.swift">
