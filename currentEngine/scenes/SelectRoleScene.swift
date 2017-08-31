@@ -32,8 +32,8 @@ class SelectRoleScene: GMLScene {
         
         let lineHeight = roleSelectBg.size.height/2;
         let lineWidth = roleSelectBg.size.width/2;
-        var ty:CGFloat = roleListPanel.size.height/roleListPanel.yScale - lineHeight;
-        var tx:CGFloat = lineWidth;
+        let ty:CGFloat = roleListPanel.size.height/roleListPanel.yScale - lineHeight;
+        let tx:CGFloat = lineWidth;
         
         var cy:CGFloat = 0;
         var cx:CGFloat = 0;

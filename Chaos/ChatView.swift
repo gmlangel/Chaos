@@ -10,21 +10,21 @@ import Foundation
 class ChatView:SKView{
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.userInteractionEnabled = true;
-        self.multipleTouchEnabled = true;
-        self.backgroundColor = UIColor.redColor();
+        self.isUserInteractionEnabled = true;
+        self.isMultipleTouchEnabled = true;
+        self.backgroundColor = UIColor.red;
         let myScene = SKScene(size: CGSize(width: self.frame.size.width, height: self.frame.size.height))
-        myScene.backgroundColor = SKColor.redColor();
+        myScene.backgroundColor = SKColor.red;
         self.presentScene(myScene);
         
         //添加手势显示，隐藏
         let res2 = UISwipeGestureRecognizer(target: self, action: NSSelectorFromString("showPanel:"));
-        res2.direction = .Left
+        res2.direction = .left
         res2.numberOfTouchesRequired = 1;
         addGestureRecognizer(res2);
         
         let res3 = UISwipeGestureRecognizer(target: self, action: NSSelectorFromString("hidePanel:"));
-        res3.direction = .Right
+        res3.direction = .right
         res3.numberOfTouchesRequired = 1;
         addGestureRecognizer(res3);
     }
@@ -33,7 +33,7 @@ class ChatView:SKView{
     {
         UIView.beginAnimations("heihei", context: nil);
         UIView.setAnimationDuration(0.3);
-        UIView.setAnimationCurve(.EaseInOut);
+        UIView.setAnimationCurve(.easeInOut);
         self.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height);
         UIView.commitAnimations();
     }
@@ -42,7 +42,7 @@ class ChatView:SKView{
     {
         UIView.beginAnimations("xixi", context: nil);
         UIView.setAnimationDuration(0.3);
-        UIView.setAnimationCurve(.EaseInOut);
+        UIView.setAnimationCurve(.easeInOut);
         self.frame = CGRect(x: self.frame.size.width - 50, y: 0, width: self.frame.size.width, height: self.frame.size.height);
         UIView.commitAnimations();
     }

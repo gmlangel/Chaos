@@ -19,12 +19,12 @@ class LoginSceneExten: LoginScene {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let p = (touches.first?.locationInNode(self.contextContainerLayer))!;
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let p = (touches.first?.location(in: self.contextContainerLayer))!;
         if(btn_beginGame.frame.contains(p))
         {
             GMLLogCenter.instance.trace("登陆");
-            NSNotificationCenter.defaultCenter().postNotificationName("changeScene", object: "SelectRoleScene");
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeScene"), object: "SelectRoleScene");
         }
 //        let mons = SKSpriteNode(texture: GMLResourceManager.instance.textureByName("Test1Monster_0")).autoScreen();
 //        self.gmlAddChild(mons);
